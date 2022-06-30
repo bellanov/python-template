@@ -1,6 +1,6 @@
 # Python Template
 
-Template for general Python development.
+Template for general `Python` development.
 
 ## Requirements
 
