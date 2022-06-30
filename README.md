@@ -1,8 +1,6 @@
-# TODO: name-of-repository
+# Python Template
 
-[![GitHub Super-Linter](https://github.com/certara/TODO: name-of-repository/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
-
-TODO: Description here
+Template for general Python development.
 
 ## Requirements
 
