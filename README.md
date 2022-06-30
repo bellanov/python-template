@@ -15,7 +15,7 @@ First, a local project environment needs to be created, then the project's modul
 1. Clone the repository:
 
    ```sh
-   git clone git@github.com:certara/python-template.git
+   git clone https://github.com/bellanov/python-template.git
    cd python-template
    ```
 
