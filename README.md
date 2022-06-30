@@ -53,26 +53,13 @@ First, a local project environment needs to be created, then the project's modul
 
    ```
 
-1. Test results and coverage are in the `testresults/`directory.
+1. Test results and coverage are in the `coverage/`directory.
 
    ```sh
-   $ tree testresults/
+   $ tree coverage/
 
-   testresults/
+   coverage/
    ├── coverage.xml
    └── junit.xml
 
    ```
-
-## Versioning
-
-All metadata regarding the project is stored either in pyproject.toml or setup.cfg. Two critical fields are necessary to properly deploy and version the codebase, which are stored in the `setup.cfg` file:
-
-- setup.cfg
-
-```sh
-name = name-of-repository <--- this must follow the exact name of the repository and conforms with the service
-version = x.x.x  <--- this conforms to semver 2.0 and must follow the exact pattern of spacing
-```
-
-As standard, build versions will key from these fields, and GitHub releases will validate that the release tag matches the field version.
