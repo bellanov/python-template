@@ -48,14 +48,20 @@ First, a local project environment needs to be created, then the project's modul
    ```python
    $ python -m tox
 
-   tests/test_handler.py::test_handler PASSED                               [ 50%]
-   tests/test_template.py::test_import PASSED                               [100%]
+   tests/test_package.py::test_hello PASSED                               [100%]
 
    ```
 
 1. Test results and coverage are in the `coverage/`directory.
 
    ```sh
+   Name                      Stmts   Miss Branch BrPart     Cover   Missing
+   ------------------------------------------------------------------------
+   src/package/__init__.py       0      0      0      0   100.00%
+   src/package/hello.py          2      0      0      0   100.00%
+   ------------------------------------------------------------------------
+   TOTAL                         2      0      0      0   100.00%
+
    $ tree coverage/
 
    coverage/
