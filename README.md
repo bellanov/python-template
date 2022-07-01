@@ -22,16 +22,16 @@ First, a local project environment needs to be created, then the project's modul
 1. Create a virtual environment with the appropriate `Python` interpreter:
 
    ```python
-   python3.8 -m venv .venv
+   python3.8 -m venv venv
    ```
 
 1. Source the virtual environment:
 
    ```python
-   $ source .venv/bin/activate
+   $ source venv/bin/activate
 
    $ which python
-   /path/to/python-template/.venv/bin/python
+   /path/to/python-template/venv/bin/python
 
    $ python --version
    Python 3.8
