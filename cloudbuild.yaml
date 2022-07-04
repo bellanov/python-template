@@ -1,20 +1,40 @@
 steps:
-  # Install dependencies
-  - name: python
-    entrypoint: pip
-    args: ["install", "-r", "requirements.txt", "--user"]
 
-  # Run unit tests
-  - name: python
-    entrypoint: python
-    args: ["-m", "pytest", "--junitxml=${SHORT_SHA}_test_log.xml"]
+  - id: Unit Tests
+    name: python:3.9-buster
+    entrypoint: bash
+    args:
+    - '-c'
+    - |
+        # Substitute tag name / version
+        sed -i 's/%VERSION%/'$TAG_NAME'/g' setup.cfg
 
-# Save test logs to Google Cloud Storage
-artifacts:
-  objects:
-    location: gs://${_BUCKET_NAME}/
-    paths:
-      - ${SHORT_SHA}_test_log.xml
-# Store images in Google Artifact Registry 
-images:
-  - us-central1-docker.pkg.dev/${PROJECT_ID}/${_ARTIFACT_REGISTRY_REPO}/myimage:${SHORT_SHA}
+        # Install dependencies
+        pip install -r requirements.txt --user
+
+        # Execute build workflow
+        python -m tox
+
+        # Capture test results
+        cp coverage/junit.xml ${_PROJECT_NAME}_${TAG_NAME}_${SHORT_SHA}_test_log.xml
+
+  - id: Publish
+    name: gcr.io/google.com/cloudsdktool/cloud-sdk:alpine
+    entrypoint: bash
+    args:
+    - '-c'
+    - |
+        echo "Establishing test results..."
+        echo ${_PROJECT_NAME}_${TAG_NAME}_${SHORT_SHA}_test_log.xml
+
+        echo "Publishing test results..."
+        gsutil cp ${_PROJECT_NAME}_${TAG_NAME}_${SHORT_SHA}_test_log.xml gs://${_LOG_BUCKET}/${_LANGUAGE}/
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+substitutions:
+
+  _LOG_BUCKET:  alx-fis3g-release-logs
+  _LANGUAGE: python
+  _PROJECT_NAME:  python_template
