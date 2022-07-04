@@ -2,7 +2,7 @@
 
 import pytest
 
-from src.package import hello
+from package import hello
 
 
 @pytest.mark.unit
