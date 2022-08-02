@@ -28,7 +28,3 @@ artifacts:
 
 substitutions:
   _BUCKET_NAME: logs-hmjbvyp8eqyefrh
-
-# Store images in Google Artifact Registry 
-# images:
-#   - us-central1-docker.pkg.dev/${PROJECT_ID}/${_ARTIFACT_REGISTRY_REPO}/myimage:${SHORT_SHA}
