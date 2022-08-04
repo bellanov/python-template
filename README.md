@@ -11,7 +11,7 @@ The project is configured to build and test using `tox` in a _Python 3.8_ enviro
 - Python 3.9
 - Python 3.10
 
-Modify the environment **py{38}** value in the `tox.ini` file to the version(s) of Python relevant to your projects. To test your code in multiple versions all at once, simply list them all i.e., **py{38}**, **py{39}**, **py{310}**.
+Modify ***Line 3*** in the `tox.ini` file to the version(s) of Python relevant to your projects. To test your code in multiple versions all at once, simply list them all i.e., **py{38}**, **py{39}**, **py{310}**.
 
 ## Installation
 
