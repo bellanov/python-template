@@ -39,7 +39,7 @@ First, a local project environment needs to be created, then the project's modul
    /path/to/python-template/venv/bin/python
 
    $ python --version
-   Python 3.8
+   Python 3.9
    ```
 
 1. Install the Requirements:
