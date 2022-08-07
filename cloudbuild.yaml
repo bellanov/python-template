@@ -16,7 +16,7 @@ steps:
         python -m tox
 
         # Capture test results
-        cp coverage/junit.xml alexei_lib_${TAG_NAME}_${SHORT_SHA}_test_log.xml
+        cp coverage/junit.xml ${_PROJECT_NAME}_${TAG_NAME}_${SHORT_SHA}_test_log.xml
 
   - id: Publish
     name: gcr.io/google.com/cloudsdktool/cloud-sdk:alpine
@@ -25,10 +25,10 @@ steps:
     - '-c'
     - |
         echo "Establishing test results..."
-        echo alexei_lib_${TAG_NAME}_${SHORT_SHA}_test_log.xml
+        echo ${_PROJECT_NAME}_${TAG_NAME}_${SHORT_SHA}_test_log.xml
 
         echo "Publishing test results..."
-        gsutil cp alexei_lib_${TAG_NAME}_${SHORT_SHA}_test_log.xml gs://${_LOG_BUCKET}/python
+        gsutil cp ${_PROJECT_NAME}_${TAG_NAME}_${SHORT_SHA}_test_log.xml gs://${_LOG_BUCKET}/python
 
 options:
   logging: CLOUD_LOGGING_ONLY
@@ -36,3 +36,4 @@ options:
 substitutions:
 
   _LOG_BUCKET:  alx-fis3g-release-logs
+  _PROJECT_NAME:  python_template
