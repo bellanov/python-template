@@ -35,6 +35,6 @@ options:
 
 substitutions:
 
-  _LOG_BUCKET:  alx-fis3g-release-logs/
+  _LOG_BUCKET:  alx-fis3g-release-logs
   _LANGUAGE: python
   _PROJECT_NAME:  python_template
