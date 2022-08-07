@@ -18,9 +18,6 @@ steps:
         # Capture test results
         cp coverage/junit.xml alexei_lib_${TAG_NAME}_${SHORT_SHA}_test_log.xml
 
-        # Build release
-        python -m build
-
   - id: Publish
     name: gcr.io/google.com/cloudsdktool/cloud-sdk:alpine
     entrypoint: bash
