@@ -28,7 +28,7 @@ steps:
         echo alexei_lib_${TAG_NAME}_${SHORT_SHA}_test_log.xml
 
         echo "Publishing test results..."
-        gsutil cp alexei_lib_${TAG_NAME}_${SHORT_SHA}_test_log.xml gs://${_LOG_BUCKET}
+        gsutil cp alexei_lib_${TAG_NAME}_${SHORT_SHA}_test_log.xml gs://${_LOG_BUCKET}/python
 
 options:
   logging: CLOUD_LOGGING_ONLY
