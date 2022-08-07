@@ -7,7 +7,7 @@ steps:
     - '-c'
     - |
         # Substitute tag name / version
-        sed -i 's/%VERSION%/'$TAG_NAME'/g' setup.cfg
+        sed -i 's/v1.2.3/'$TAG_NAME'/g' setup.cfg
 
         # Install dependencies
         pip install -r requirements.txt --user
