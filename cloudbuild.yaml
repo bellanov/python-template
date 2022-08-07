@@ -28,12 +28,13 @@ steps:
         echo ${_PROJECT_NAME}_${TAG_NAME}_${SHORT_SHA}_test_log.xml
 
         echo "Publishing test results..."
-        gsutil cp ${_PROJECT_NAME}_${TAG_NAME}_${SHORT_SHA}_test_log.xml gs://${_LOG_BUCKET}/python/
+        gsutil cp ${_PROJECT_NAME}_${TAG_NAME}_${SHORT_SHA}_test_log.xml gs://${_LOG_BUCKET}/${_LANGUAGE}/
 
 options:
   logging: CLOUD_LOGGING_ONLY
 
 substitutions:
 
-  _LOG_BUCKET:  alx-fis3g-release-logs
+  _LOG_BUCKET:  alx-fis3g-release-logs/
+  _LANGUAGE: python
   _PROJECT_NAME:  python_template
