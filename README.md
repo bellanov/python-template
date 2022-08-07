@@ -4,7 +4,7 @@ Template for general `Python` development.
 
 ## Requirements
 
-The project is configured to build and test using `tox` in a _Python 3.8_ environment so the following are required:
+The project is configured to build and test using `tox` in a _Python 3.9_ environment so the following are required:
 
 - Python 3.8
 
@@ -22,7 +22,7 @@ First, a local project environment needs to be created, then the project's modul
 1. Create a virtual environment with the appropriate `Python` interpreter:
 
    ```python
-   python3.8 -m venv venv
+   python3.9 -m venv venv
    ```
 
 1. Source the virtual environment:
