@@ -6,7 +6,6 @@ Template for general `Python` development.
 
 The project is configured to build and test using `tox` in a _Python 3.9_ environment, but the code is valid for the following versions:
 
-- Python 3.7
 - Python 3.8
 - Python 3.9
 - Python 3.10
