@@ -35,6 +35,6 @@ options:
 
 substitutions:
 
-  _LOG_BUCKET: gcp-fc5r-shared-logs
+  _LOG_BUCKET: gcp-a2c3-shared-logs
   _LANGUAGE: python
   _PROJECT_NAME:  python_template
