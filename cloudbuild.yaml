@@ -35,6 +35,6 @@ options:
 
 substitutions:
 
-  _LOG_BUCKET: exe-wy3y-shared-releases
+  _LOG_BUCKET: exe-wy3y-shared-logs
   _LANGUAGE: python
   _PROJECT_NAME:  python_template
