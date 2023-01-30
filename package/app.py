@@ -15,6 +15,7 @@ logger = logging.getLogger("python-template")
 def app():
     """Simulates an application."""
     logger.info("EXECUTING application task")
+    return "Hello World!"
 
 
 app()
