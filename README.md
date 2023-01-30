@@ -19,6 +19,12 @@ First, a local project environment needs to be created, then the project's modul
 
 1. Make your changes!@!
 
+```sh
+# Docker Build
+docker build -t py-test .
+docker run py-test
+```
+
 1. Execute the build workflow inside a **Docker** container:
 
    ```python
