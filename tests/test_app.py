@@ -2,10 +2,10 @@
 
 import pytest
 
-from package import hello
+from package import app
 
 
 @pytest.mark.unit
-def test_hello():
+def test_app():
     """Validate package is importable"""
-    assert hello.hello_world() == "Hello World!"
+    assert app.app() == "Hello World!"
