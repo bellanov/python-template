@@ -17,7 +17,7 @@ First, a local project environment needs to be created, then the project's modul
    cd python-template
    ```
 
-1. Make your changes!@!
+1. Make your changes and build the application.
 
 ```sh
 # Build
