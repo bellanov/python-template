@@ -21,10 +21,23 @@ First, a local project environment needs to be created, then the project's modul
 
 ```sh
 # Build
-docker build -t py-temp .
+docker build -t python-template .
 
 # Execute
-docker run py-temp
+docker run python-template
 # BOOTSTRAPPING application workflow
 # BOOTSTRAPPING application workflow COMPLETED
+```
+
+1. Execute Unit Tests (in Docker as well #KISS)
+
+```sh
+docker build -t test-python-template= -f test.Dockerfile .
+# Output
+```
+
+1. Build a Release Artifact.
+
+```sh
+docker build -t python-template-release -f release.Dockerfile .
 ```
