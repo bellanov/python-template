@@ -19,12 +19,12 @@ First, a local project environment needs to be created, then the project's modul
 
 1. Make your changes and **build** the application.
 
-```sh
-# Build
-docker build -t python-template .
+   ```sh
+   # Build
+   docker build -t python-template .
 
-# Execute
-docker run python-template
-# BOOTSTRAPPING application workflow
-# BOOTSTRAPPING application workflow COMPLETED
-```
+   # Execute
+   docker run python-template
+   # BOOTSTRAPPING application workflow
+   # BOOTSTRAPPING application workflow COMPLETED
+   ```
