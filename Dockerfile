@@ -7,5 +7,8 @@ WORKDIR /app
 # Install dependencies
 RUN pip install -r requirements.txt
 
-# Bootstrap application
+# Execute Unit Tests / Validate Configuration
+RUN pytest tests/
+
+# Execute the application
 ENTRYPOINT [ "scripts/entrypoint.sh" ]

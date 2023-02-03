@@ -6,7 +6,7 @@ Template for general `Python` development.
 
 The project is configured to build and test inside a `Docker` in a _Python 3.10_ environment.
 
-## Installation
+## Development Workflow
 
 First, a local project environment needs to be created, then the project's modules will be installed into locally into a virtual environment.
 
@@ -21,10 +21,10 @@ First, a local project environment needs to be created, then the project's modul
 
 ```sh
 # Build
-docker build -t py-test .
+docker build -t python-template .
 
 # Execute
-docker run py-test
+docker run python-template
 # BOOTSTRAPPING application workflow
 # BOOTSTRAPPING application workflow COMPLETED
 ```
