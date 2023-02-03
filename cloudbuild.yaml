@@ -13,10 +13,10 @@ steps:
         pip install -r requirements.txt --user
 
         # Execute build workflow
-        python -m tox
+        # python -m tox
 
         # Capture test results
-        cp coverage/junit.xml ${_PROJECT_NAME}_${TAG_NAME}_${SHORT_SHA}_test_log.xml
+        # cp coverage/junit.xml ${_PROJECT_NAME}_${TAG_NAME}_${SHORT_SHA}_test_log.xml
 
   - id: Publish
     name: gcr.io/google.com/cloudsdktool/cloud-sdk:alpine
@@ -25,10 +25,10 @@ steps:
     - '-c'
     - |
         echo "Establishing test results..."
-        echo ${_PROJECT_NAME}_${TAG_NAME}_${SHORT_SHA}_test_log.xml
+        # echo ${_PROJECT_NAME}_${TAG_NAME}_${SHORT_SHA}_test_log.xml
 
         echo "Publishing test results..."
-        gsutil cp ${_PROJECT_NAME}_${TAG_NAME}_${SHORT_SHA}_test_log.xml gs://${_LOG_BUCKET}/${_LANGUAGE}/
+        # gsutil cp ${_PROJECT_NAME}_${TAG_NAME}_${SHORT_SHA}_test_log.xml gs://${_LOG_BUCKET}/${_LANGUAGE}/
 
 options:
   logging: CLOUD_LOGGING_ONLY

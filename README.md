@@ -33,7 +33,6 @@ docker run python-template
 
 ```sh
 docker build -t test-python-template= -f test.Dockerfile .
-# Output
 ```
 
 1. Build a Release Artifact.
