@@ -13,7 +13,7 @@ steps:
         pip install -r requirements.txt --user
 
         # Execute build workflow
-        # python -m tox
+        pytest
 
         # Capture test results
         # cp coverage/junit.xml ${_PROJECT_NAME}_${TAG_NAME}_${SHORT_SHA}_test_log.xml
