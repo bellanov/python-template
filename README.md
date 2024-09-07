@@ -17,21 +17,21 @@ First, a local project environment needs to be created, then the project's modul
    cd python-template
    ```
 
-1. Create a virtual environment.
+2. Create a virtual environment.
 
-```sh
-# Create Virtual Environment
-python3 -m venv .venv
+   ```sh
+   # Create Virtual Environment
+   python3 -m venv .venv
 
-# Activate Virtual Environment
-source .venv/bin/activate
+   # Activate Virtual Environment
+   source .venv/bin/activate
 
-# Install Dependencies
-pip install -r requirements.txt 
+   # Install Dependencies
+   pip install -r requirements.txt 
 
-# Deactivate Virtual Environment
-deactivate
-```
+   # Deactivate Virtual Environment
+   deactivate
+   ```
 
 3. Make your changes and **build** the application.
 
