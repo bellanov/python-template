@@ -36,12 +36,19 @@ First, a local project environment needs to be created, then the project's modul
 3. Make your changes and **build** the application.
 
    ```sh
-   # Build
-   docker build -t python-template .
+   # Build Docker Image
+   scripts/build.sh
 
-   # Execute
-   docker run python-template
+   # Execute Docker Image
+   scripts/deploy.sh
    # BOOTSTRAPPING application workflow
+   # EXECUTING application workflow
    # Hello World!!!
    # BOOTSTRAPPING application workflow COMPLETED
+
+   # Teardown Docker Container
+   scripts/teardown.sh
+
+   # Purge Docker Image
+   scripts/purge.sh
    ```
