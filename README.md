@@ -53,3 +53,10 @@ First, a local project environment needs to be created, then the project's modul
    # Purge Docker Image
    scripts/purge.sh
    ```
+
+4. Tag and version code changes. This will trigger a build in **Google Cloud Platform (GCP)**.
+
+   ```sh
+   git tag -a "1.2.3" -m "Version 1.2.3"
+   git push --follow-tags
+   ```
