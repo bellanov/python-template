@@ -36,11 +36,12 @@ First, a local project environment needs to be created, then the project's modul
 3. Make your changes and **build** the application.
 
    ```sh
-   # Build Docker Image
+   # Build & Unit Test Docker Image
    scripts/build.sh
 
    # Execute Docker Image
    scripts/deploy.sh
+
    # BOOTSTRAPPING application workflow
    # EXECUTING application workflow
    # Hello World!!!
