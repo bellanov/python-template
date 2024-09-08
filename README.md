@@ -54,7 +54,7 @@ First, a local project environment needs to be created, then the project's modul
    scripts/purge.sh
    ```
 
-4. Tag and version code changes. This will trigger a build in **Google Cloud Platform (GCP)**.
+4. Tag and version code changes. This will trigger a build in **Google Cloud Platform (GCP)** that will be associated with the pull request.
 
    ```sh
    git tag -a "1.2.3" -m "Version 1.2.3"
