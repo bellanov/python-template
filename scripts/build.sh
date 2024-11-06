@@ -1,5 +1,9 @@
 #!/bin/bash
 #
-# Build Docker containers after code changes.
+# Build a Python distribution.
 
-docker build -t python-template .
+# Clean Existing Distributions
+rm -rf dist/*
+
+# Build
+python3 -m build
