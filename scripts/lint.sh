@@ -2,8 +2,8 @@
 #
 # Lint the code base.
 
-echo "Linting Package..."
-pylint serenade_flow/
+echo "Linting Package"
+pylint package/
 
-echo "Linting Tests..."
+echo "Linting Tests"
 pylint tests/
