@@ -5,13 +5,13 @@ build-backend = "hatchling.build"
 
 [project]
 name = "andy-python-template"
-version = "0.1.1"
+version = "0.2.0"
 authors = [
   { name="Bellanov Apilli", email="bellanovapilli@gmail.com" },
 ]
 description = "Template for general Python development."
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
