@@ -1,9 +1,19 @@
 #!/bin/bash
 #
-# Lint the code base.
+# Lint Code Base.
 
-echo "Linting Package"
-pylint package/
+# Lint Code
+echo "Linting code base..."
 
-echo "Linting Tests"
-pylint tests/
+# stop the build if there are Python syntax errors or undefined names
+flake8 python_template --count --select=E9,F63,F7,F82 --show-source --statistics
+# exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+flake8 python_template --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+# Lint Tests
+echo "Linting tests..."
+
+# stop the build if there are Python syntax errors or undefined names
+flake8 tests --count --select=E9,F63,F7,F82 --show-source --statistics
+# exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+flake8 tests --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
