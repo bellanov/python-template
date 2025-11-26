@@ -12,10 +12,13 @@ level=logging.DEBUG, format="%(asctime)-15s %(levelname)-8s %(message)s"
 logger = logging.getLogger("python-template")
 
 
-def app():
-    """Simulates an application."""
-    logger.info("EXECUTING application task")
-    return "Hello World!"
+def add(a: int, b: int) -> int:
+    """Add two numbers."""
+    logger.info("Adding two numbers")
+    return a + b
 
 
-app()
+def subtract(a: int, b: int) -> int:
+    """Subtract two numbers."""
+    logger.info("Subtracting two numbers")
+    return a - b

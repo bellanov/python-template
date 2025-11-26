@@ -2,8 +2,8 @@
 #
 # Lint the code base.
 
-echo "Linting Package"
-pylint package/
+echo "Linting Code"
+pylint python_template/
 
 echo "Linting Tests"
 pylint tests/
