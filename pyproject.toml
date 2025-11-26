@@ -9,7 +9,7 @@ version = "0.1.1"
 authors = [
   { name="Bellanov Apilli", email="bellanovapilli@gmail.com" },
 ]
-description = "ETL Pipeline Implementation. Extract, Transform, and Load data from both local and remote data sources."
+description = "Template for general Python development."
 readme = "README.md"
 requires-python = ">=3.8"
 classifiers = [
@@ -24,3 +24,9 @@ packages = ["python_template/"]
 [project.urls]
 Homepage = "https://github.com/bellanov/etl-pipeline"
 Issues = "https://github.com/bellanov/etl-pipeline/issues"
+
+[tool.coverage.run]
+omit = [
+    "tests/*",
+    "*/test_*.py",
+]
