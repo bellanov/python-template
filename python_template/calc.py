@@ -1,6 +1,7 @@
 """
 Simple Python Program.
 """
+
 import logging
 
 # Configure string format for consumption into logging platforms.
