@@ -9,6 +9,9 @@ echo "Linting code base..."
 flake8 python_template --count --select=E9,F63,F7,F82 --show-source --statistics
 # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
 flake8 python_template --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+# Check for code formatting issues
+black --check python_template
+isort --check python_template
 
 # Lint Tests
 echo "Linting tests..."
@@ -17,3 +20,6 @@ echo "Linting tests..."
 flake8 tests --count --select=E9,F63,F7,F82 --show-source --statistics
 # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
 flake8 tests --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+# Check test formatting issues
+black --check tests
+isort --check tests
