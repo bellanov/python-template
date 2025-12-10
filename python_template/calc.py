@@ -2,9 +2,7 @@
 Simple Python Program.
 """
 
-import fileinput
 import logging
-import os
 
 # Configure string format for consumption into logging platforms.
 logging.basicConfig(
