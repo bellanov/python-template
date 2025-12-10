@@ -5,7 +5,7 @@ to help get your contribution accepted.
 
 ## Prerequisites
 
-- `python` 3.00 or greater
+- `python` 3.10 or greater
 - `pip`
 
 ## Issue Assignment
@@ -17,10 +17,6 @@ Before any development is undertaken, there should be a **GitHub Issue** created
 2. Once you have assigned yourself an issue, schedule the issue within an **Iteration** so it is visible on the *Kanban Board*. Once the issue is visible on the Kanban Board, drag the issue from **Backlog** to **In Progress**.
 
 3. After the issue has been transitioned to **In Progress**, a **Branch** within the issue should be created to properly isolate changes. This branch will been the one to conduct development within, or open external *Pull Requests* against.
-
-## PyPi API Key
-
-An **API Key** is required to be able to publish releases to *testpypi*. Upon the assignment of an issue, the repository owner will be in touch.
 
 ## Development Workflow
 
@@ -49,31 +45,45 @@ First, a local project environment needs to be created, then the project's modul
    deactivate
    ```
 
-3. Make your changes, increment the version in `pyproject.toml`, and **build** the application.
+3. Make your changes, increment the version in `pyproject.toml`, and open a **Pull Request**.
 
    ```sh
-   # Build a Python package distribution
-   scripts/build.sh
+   # Create a branch to isolate your changes
+   git branch my-new-feature
 
-   # Publish a distribution to PyPi (testpypi)
-   scripts/release.sh
+   # Hop onto the branch to add your changes
+   git checkout my-new-feature
 
-   # Install the Python package locally, from testpypi.
-   scripts/install.sh "<VERSION>"
+   # Make your changes and commit them
+   git add .
+   git commit -m "Added My New Feature"
 
-   # Execute Unit Tests
-   scripts/test.sh
+   # Push the changes to your branch (first push)
+   git push --set-upstream origin my-new-feature
 
-   # Execute Code Samples
-   scripts/examples.sh
+   # All future pushes
+   git push
 
-   # Lint Code Base
-   scripts/lint.sh
-   ```
+   # Create a pull request using the provided link after pushing
+   remote: 
+   remote: Create a pull request for 'my-new-feature' on GitHub by visiting:
+   remote:      https://github.com/bellanov/python-template/pull/new/my-new-feature
 
-4. Tag and version code changes.
+   # Rev the version in pyproject.toml and tag the changes
+   git tag -a "0.1.0" -m "Version 0.1.0"
 
-   ```sh
-   git tag -a "1.2.3" -m "Version 1.2.3"
+   # Push the tags
    git push --follow-tags
    ```
+
+## Testing, Linting, and Formatting
+
+Be sure to constantly *test*, *lint*, and *format* the code base while developing.
+
+```sh
+# Execute Unit Tests
+scripts/test.sh
+
+# Lint Code Base
+scripts/lint.sh
+```
