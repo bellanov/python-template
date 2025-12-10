@@ -22,4 +22,5 @@ def add(a: int, b: int) -> int:
 def subtract(a: int, b: int) -> int:
     """Subtract two numbers."""
     logger.info("Subtracting two numbers")
+
     return a - b
