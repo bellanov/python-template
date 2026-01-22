@@ -1,12 +1,5 @@
 import pytest
-
-from functions import (
-    greet,
-    add_numbers,
-    power,
-    multiply,
-    introduce,
-)
+from functions import add_numbers, greet, introduce, multiply, power
 
 
 def test_greet():
@@ -56,4 +49,3 @@ def test_introduce():
     assert "age: 30" in result
     assert "city: New York" in result
     assert result.startswith("Introduction:")
-

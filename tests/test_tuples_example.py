@@ -1,6 +1,7 @@
 import importlib
 import sys
 
+
 def test_tuples_example():
     """
     Test tuple operations defined in tuples_example.py
@@ -23,6 +24,7 @@ def test_tuples_example():
     # ---- Concatenation ----
     expected_combined = (1, 2, "three", 4.0, 5, 6, 7)
     assert tuples_example.combined_tuple == expected_combined
+
 
 def test_tuples_example_print(capsys):
 

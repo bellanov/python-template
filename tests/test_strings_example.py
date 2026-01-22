@@ -1,6 +1,7 @@
 import importlib
 import sys
 
+
 def test_strings_example():
     """
     Test string operations defined in strings_example.py
@@ -37,6 +38,7 @@ def test_strings_example():
 
     # ---- Split ----
     assert strings_example.words == ["Python", "Programming"]
+
 
 def test_strings_example_print(capsys):
 

@@ -10,6 +10,7 @@ def test_mytest():
     with pytest.raises(SystemExit):
         f()
 
+
 # content of test_class.py
 class TestClass:
     def test_one(self):

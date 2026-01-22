@@ -3,12 +3,9 @@ Dictionary is a built-in data type in Python that stores key-value pairs.
 Each key is unique and is used to access its corresponding value. Dictionaries are mutable, meaning you can add, remove, or modify key-value pairs after the dictionary has been created. They are commonly used for storing and retrieving data efficiently based on keys.
 
 """
+
 # Creating a dictionary
-my_dict = {
-    "name": "Alice",
-    "age": 30,
-    "is_student": False
-}
+my_dict = {"name": "Alice", "age": 30, "is_student": False}
 
 # Accessing values
 name = my_dict["name"]

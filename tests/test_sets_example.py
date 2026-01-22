@@ -1,6 +1,7 @@
 import importlib
 import sys
 
+
 def test_sets_example():
     """
     Test set operations defined in sets_example.py
@@ -29,10 +30,10 @@ def test_sets_example():
     assert sets_example.union_set == expected_union
 
 
-def test_sets_example_print(capsys): # Test the print output of sets_example.py module
+def test_sets_example_print(capsys):  # Test the print output of sets_example.py module
 
     captured = capsys.readouterr()
-    output = captured.out
+    output = captured.out 
 
     # Example checks (if you added prints)
     # assert "1" in output

@@ -1,6 +1,7 @@
 import importlib
 import sys
-import types
+
+from pytest import CaptureFixture
 
 
 def test_data_types_module_values():
@@ -45,7 +46,8 @@ def test_data_types_module_values():
     assert (False + True) == 1
     assert (False + False) == 0
 
-def test_data_types_print_output(capsys): 
+
+def test_data_types_print_output(capsys: CaptureFixture[str]):
     # Test the print output of data_types.py module
     captured = capsys.readouterr()
 
@@ -53,5 +55,3 @@ def test_data_types_print_output(capsys):
     assert "Float:" in captured.out
     assert "String:" in captured.out
     assert "Boolean:" in captured.out
-
-

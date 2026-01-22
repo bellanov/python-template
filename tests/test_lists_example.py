@@ -1,6 +1,7 @@
 import importlib
 import sys
 
+
 def test_lists_example():
     """
     Test list operations defined in lists_example.py
@@ -23,7 +24,7 @@ def test_lists_example():
     # Step 4: remove('four') -> [0, 1, 'two', 3, 'five', 6.0, 7]
     # Step 5: pop() -> last element 7 removed -> [0, 1, 'two', 3, 'five', 6.0]
 
-    expected_list = [0, 1, 'two', 3, 'five', 6.0]
+    expected_list = [0, 1, "two", 3, "five", 6.0]
     assert my_list == expected_list
 
     # ---- Access elements ----
@@ -31,7 +32,7 @@ def test_lists_example():
     assert lists_example.last_element == 6.0
 
     # ---- Slicing ----
-    expected_sublist = [1, 'two', 3]
+    expected_sublist = [1, "two", 3]
     assert lists_example.sub_list == expected_sublist
 
     # ---- Length ----
@@ -40,7 +41,8 @@ def test_lists_example():
     # ---- Popped element ----
     assert lists_example.popped_element == 7
 
-def test_lists_example_print(capsys): 
+
+def test_lists_example_print(capsys):
     # Test the print output of lists_example.py module
 
     captured = capsys.readouterr()

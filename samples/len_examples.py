@@ -4,6 +4,7 @@ This module demonstrates the use of the len() function
 to determine the length of various data structures in Python.
 
 """
+
 # String
 length_str: int = len("hello world")
 print(length_str)  # 11

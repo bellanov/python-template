@@ -1,5 +1,8 @@
 import importlib
 import sys
+from typing import Any
+
+from pytest import CaptureFixture
 
 
 def test_dictionary_example_values():
@@ -22,7 +25,7 @@ def test_dictionary_example_values():
     # ---- Keys, values, items ----
     keys = list(dictionary_example.keys)
     values = list(dictionary_example.values)
-    items = list(dictionary_example.items)
+    items: list[Any] = list(dictionary_example.items)
 
     assert "name" in keys
     assert "age" in keys
@@ -38,8 +41,9 @@ def test_dictionary_example_values():
     # ---- Key existence ----
     assert dictionary_example.has_name is True
 
-def test_dictionary_example_print(capsys): 
-# Test the print output of dictionary_example.py
+
+def test_dictionary_example_print(capsys: CaptureFixture[str]):
+    # Test the print output of dictionary_example.py
 
     captured = capsys.readouterr()
     output = captured.out
