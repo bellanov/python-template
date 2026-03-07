@@ -1,8 +1,8 @@
 # python-samples
 
-Development playground for learning Python.
+Development playground for learning **Python**.
 
-A series of Python samples are available spanning the categories below.
+A series of Python *samples* are available spanning the categories below.
 
 | Example | Description |
 |---|---|
