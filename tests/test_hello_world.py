@@ -1,17 +1,7 @@
-import importlib
-import sys
+# content of test_approx.py
+import pytest
+from samples.beginner.hello_world.hello_world import hello_world
 
 
 def test_hello_world():
-    """
-    Test that hello_world() returns the correct string.
-    """
-
-    # Import a fresh copy of the module
-    if "hello" in sys.modules:
-        del sys.modules["hello"]
-    hello = importlib.import_module("hello")
-
-    # Call the function and check output
-    result = hello.hello_world()
-    assert result == "Hello, World!"
+    assert hello_world() == "Hello, World!"
