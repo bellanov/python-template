@@ -1,4 +1,4 @@
-# Contributing to [Project Name]
+# Contributing to python-samples
 
 Thank you for your interest!
 
