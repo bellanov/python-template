@@ -1,4 +1,5 @@
 """Display the current PYTHONPATH and sys.path entries."""
+
 import os
 import sys
 
