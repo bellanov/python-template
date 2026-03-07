@@ -1,6 +1,26 @@
-# python-samples
+# Contributing to [Project Name]
 
-Development playground for learning Python.
+Thank you for your interest!
+
+## Code of Conduct
+Please follow our [Code of Conduct](CODE_OF_CONDUCT.md).
+
+## How to Report Bugs
+- Use the issue tracker.
+- Provide a clear title and description.
+- Include steps to reproduce the bug.
+
+## Suggesting Enhancements
+- Explain the feature and why it is needed.
+
+## Pull Requests
+1. Fork the repo.
+2. Create a new branch (`git checkout -b feature/name`).
+3. Make changes and run tests.
+4. Submit a PR with a detailed description.
+
+## License
+By contributing, you agree that your contributions will be licensed under [License].
 
 ## Development Workflow
 
