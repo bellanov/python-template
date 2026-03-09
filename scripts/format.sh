@@ -4,12 +4,12 @@
 
 # Format Imports
 echo "Formatting imports..."
-isort python_template
+isort samples
 isort tests
 
 # Format Code
 echo "Formatting code base..."
-black python_template 
+black samples 
 
 # Format Tests
 echo "Formatting tests..."

@@ -1,8 +1,0 @@
-# import os module to access environment variables
-import os  
-
-# This script prints the PYTHONPATH environment variable
-
-pythonpath = os.environ.get("PYTHONPATH") # Get the PYTHONPATH environment variable
-print("PYTHONPATH:", pythonpath)  # Print the PYTHONPATH value
-
