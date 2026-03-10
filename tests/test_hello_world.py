@@ -1,7 +1,7 @@
 """Test the Hello World sample."""
 import pytest
 
-from samples.beginner.hello_world.app import hello_world
+from samples.hello_world.app import hello_world
 
 
 def test_hello_world():
