@@ -6,8 +6,9 @@ A series of Python *samples* are available spanning the categories below.
 
 | Example | Description |
 |---|---|
-| *beginner* | Simpler *Python* programs tailored to beginners. |
-
+| *introduction* | A general introduction to the *Python* programming language. |
+| *hello_world* | A very simple *Python* program. |
+| *virtual_environments* | Overview of *Virtual Environments* and their usage. |
 
 # Script Execution
 

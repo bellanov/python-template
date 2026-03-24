@@ -1,6 +1,6 @@
-# Beginner Examples
+# Samples
 
-A series of **beginner** level examples for those learning *Python*.
+A series of examples for those learning *Python*.
 
 | Example | Description |
 |---|---|
