@@ -27,3 +27,13 @@ Follow the prompts, and you’ll have a virtual environment called “dsfs,” w
 #
 #     $ conda deactivate
 ```
+
+Now that you have your environment, it’s worth installing [IPython](https://ipython.org/), which is a full-featured Python shell:
+
+```sh
+python -m pip install ipython
+```
+
+> Anaconda comes with its own package manager, conda, but you can also just use the standard Python package manager pip, which is what we’ll be doing
+
+As a matter of good discipline, you should always work in a **virtual environment**, and never using the *“base”* Python installation.
