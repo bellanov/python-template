@@ -1,6 +1,6 @@
 # defaultdict
 
-Overview of *defaultdict* and their usage.
+Overview of *defaultdict* and its usage.
 
 Imagine that you’re trying to count the words in a document. An obvious approach is to create a dictionary in which the keys are words and the values are counts. As you check each word, you can increment its count if it’s already in the dictionary and add it to the dictionary if it’s not:
 
