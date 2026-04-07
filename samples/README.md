@@ -6,6 +6,7 @@ A series of Python *samples* are available spanning the categories below.
 |---|---|
 | *args_kwargs* | Overview of *assert* and its usage. |
 | *assert* | Overview of *assert* and its usage. |
+| *asychronous_programming* | Overview of *Asynchronous Programming* in Python. |
 | *control_flow* | Overview of *Control Flow* and its usage. |
 | *counters* | Overview of *Counters* and their usage. |
 | *defaultdict* | Overview of *defaultdict* and its usage. |
