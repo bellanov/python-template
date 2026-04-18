@@ -85,7 +85,7 @@ class NoResetClicker(CountingClicker):
 
     # Except that it has a reset method that does nothing.
     def reset(self):
-    pass
+        pass
 
 clicker2 = NoResetClicker()
 assert clicker2.read() == 0

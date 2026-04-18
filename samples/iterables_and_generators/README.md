@@ -29,14 +29,12 @@ for i in generate_range(10):
 With a generator, you can even create an infinite sequence:
 
 ```python
-def
-natural_numbers
-():
-"""returns 1, 2, 3, ..."""
-n = 1
-while True:
-    yield n
-    n += 1
+def natural_numbers():
+    """returns 1, 2, 3, ..."""
+    n = 1
+    while True:
+        yield n
+        n += 1
 ```
 
 although you probably shouldn’t iterate over it without using some kind of `break` logic.

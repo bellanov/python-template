@@ -43,8 +43,14 @@ dd_list[2].append(1)                    # now dd_list contains {2: [1]}
 dd_dict = defaultdict(dict)             # dict() produces an empty dict
 dd_dict["Joel"]["City"] = "Seattle"     # {"Joel" : {"City": Seattle"}}
 
-dd_pair = defaultdict(lambda: [0, 0])
+dd_pair = defaultdict(lambda: [0, 0])   # Define custom types
 dd_pair[2][1] = 1                       # now dd_pair contains {2: [0, 1]}
 ```
 
 These will be useful when we’re using dictionaries to *“collect”* results by some key and don’t want to have to check every time to see if the key exists yet.
+
+A useful rule of thumb is:
+
+- use `defaultdict(int)` when the default can come from calling `int()`
+- use `defaultdict(list)` when the default can come from calling `list()`
+- use `defaultdict(lambda: [0, 0])` when you need a `custom` fresh object each time

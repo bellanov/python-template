@@ -34,9 +34,9 @@ def f2(x, y):
 
 g = doubler(f2)
 try:
-g(1, 2)
+    g(1, 2)
 except TypeError:
-print("as defined, g only takes one argument")
+    print("as defined, g only takes one argument")
 ```
 
 What we need is a way to specify a function that takes arbitrary arguments. We can do this with argument unpacking and a little bit of magic:
@@ -66,9 +66,9 @@ You could do all sorts of strange tricks with this; we will only use it to produ
 def doubler_correct(f):
     """works no matter what kind of inputs f expects"""
     def g(*args, **kwargs):
-    """whatever arguments g is supplied, pass them through to f"""
-    return 2 * f(*args, **kwargs)
-return g
+        """whatever arguments g is supplied, pass them through to f"""
+        return 2 * f(*args, **kwargs)
+    return g
 
 g = doubler_correct(f2)
 assert g(1, 2) == 6, "doubler should work now"
