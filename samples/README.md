@@ -4,6 +4,7 @@ A series of Python *samples* are available spanning the categories below.
 
 | Sample | Description |
 |---|---|
+| *args_kwargs* | Overview of *args & kwargs* and their usage. |
 | *assert* | Overview of *assert* and its usage. |
 | *control_flow* | Overview of *Control Flow* and its usage. |
 | *counters* | Overview of *Counters* and their usage. |
