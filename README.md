@@ -30,6 +30,7 @@ A series of Python *samples* are available spanning the categories below.
 | *type_annotations* | Overview of *Type Annotations* in Python. |
 | *virtual_environments* | Overview of *Virtual Environments* and their usage. |
 | *whitespace_formatting* | Overview of *Whitespace Formatting* in Python. |
+| *zip_argument_unpacking* | Overview of *zip & Argument Unpacking* in Python. |
 
 # Script Execution
 
