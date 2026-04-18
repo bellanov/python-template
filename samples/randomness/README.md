@@ -5,8 +5,7 @@ Overview of *Randomness* in Python.
 As we learn data science, we will frequently need to generate random numbers, which we can do with the `random` module:
 
 ```python
-import
-random
+import random
 random.seed(10)  # this ensures we get the same results every time
 four_uniform_randoms = [random.random() for _ in range(4)]
 

@@ -28,7 +28,6 @@ x[0] = -1           # now x is [-1, 1, 2, 3, ..., 9]
 You can also use square brackets to *slice* lists. The slice `i:j` means all elements from `i` (inclusive) to `j` (not inclusive). If you leave off the start of the slice, you’ll slice from the beginning of the list, and if you leave of the end of the slice, you’ll slice until the end of the list:
 
 ```python
-
 first_three = x[:3]                     # [-1, 1, 2]
 three_to_end = x[3:]                    # [3, 4, ..., 9]
 one_to_four = x[1:5]                    # [1, 2, 3, 4]
@@ -60,7 +59,7 @@ It is easy to *concatenate* lists together. If you want to modify a list in plac
 
 ```python
 x = [1, 2, 3]
-x.extend(4, 5, 6)   # x is now [1, 2, 3, 4, 5, 6]
+x.extend([4, 5, 6])   # x is now [1, 2, 3, 4, 5, 6]
 ```
 
 If you don’t want to modify `x`, you can use list addition:
