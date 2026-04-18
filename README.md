@@ -60,13 +60,13 @@ Obtaining file:///C:/Users/cityd/Documents/GitHub/python-samples
   Getting requirements to build editable ... done
   Installing backend dependencies ... done
   Preparing editable metadata (pyproject.toml) ... done
-Building wheels for collected packages: andy-python-samples
-  Building editable for andy-python-samples (pyproject.toml) ... done
-  Created wheel for andy-python-samples: filename=andy_python_samples-0.2.0-py3-none-any.whl size=5609 sha256=19e163f506a80d9f01a397dba46a954c5617a4f7c98699c0e22bedb81798f271
+Building wheels for collected packages: python-samples
+  Building editable for python-samples (pyproject.toml) ... done
+  Created wheel for python-samples: filename=andy_python_samples-0.2.0-py3-none-any.whl size=5609 sha256=19e163f506a80d9f01a397dba46a954c5617a4f7c98699c0e22bedb81798f271
   Stored in directory: C:\Users\cityd\AppData\Local\Temp\pip-ephem-wheel-cache-19vbw_17\wheels\a6\17\c0\d817a572e54c10a4033b71215a913d15bf9712d87f48f8d38b
-Successfully built andy-python-samples
-Installing collected packages: andy-python-samples
-Successfully installed andy-python-samples-0.2.0
+Successfully built python-samples
+Installing collected packages: python-samples
+Successfully installed python-samples-0.2.0
 ```
 
 Now the previous command should execute successfully.
