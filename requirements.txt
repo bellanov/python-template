@@ -1,5 +1,7 @@
+ipython
+pytest
 black
 coverage
 flake8
 isort
-pytest
+mypy
