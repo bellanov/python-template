@@ -12,7 +12,7 @@ A series of Python *samples* are available spanning the categories below.
 | [*counters*](https://github.com/bellanov/python-samples/tree/main/samples/counters) | Overview of *Counters* and their usage. |
 | [*defaultdict*](https://github.com/bellanov/python-samples/tree/main/samples/defaultdict) | Overview of *defaultdict* and its usage. |
 | [*dictionaries*](https://github.com/bellanov/python-samples/tree/main/samples/dictionaries) | Overview of *Dictionaries* and their usage. |
-| [*dsa*](https://github.com/bellanov/python-samples/tree/main/samples/dsa) | Data Structures and Algorithms (DSA) |
+| [*dsa*](https://github.com/bellanov/python-samples/tree/main/samples/dsa) | Data Structures and Algorithms (DSA). |
 | [*exceptions*](https://github.com/bellanov/python-samples/tree/main/samples/exceptions) | Overview of *Exceptions* and their usage. |
 | [*functions*](https://github.com/bellanov/python-samples/tree/main/samples/functions) | Overview of *Functions* and their usage. |
 | [*hello_world*](https://github.com/bellanov/python-samples/tree/main/samples/hello_world) | A very simple *Python* program. |
