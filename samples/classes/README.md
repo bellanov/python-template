@@ -94,3 +94,79 @@ assert clicker2.read() == 1
 clicker2.reset()
 assert clicker2.read() == 1, "reset shouldn't do anything"
 ```
+
+## Abstract Classes
+
+An **abstract class** is a class that cannot be instantiated directly. It defines a common interface—a set of methods that every subclass *must* implement. Python provides this via the `abc` module (`ABC` and `abstractmethod`).
+
+```python
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    """Abstract base class for all shapes."""
+
+    @abstractmethod
+    def area(self) -> float:
+        """Return the area of the shape."""
+
+    @abstractmethod
+    def perimeter(self) -> float:
+        """Return the perimeter of the shape."""
+
+    def describe(self) -> str:
+        return f"I am a {type(self).__name__} with area={self.area():.2f}"
+```
+
+The `@abstractmethod` decorator marks `area` and `perimeter` as *required*. Any subclass that doesn't implement all abstract methods will raise a `TypeError` when you try to instantiate it:
+
+```python
+# This would raise TypeError: Can't instantiate abstract class Shape
+# with abstract methods area, perimeter
+# s = Shape()
+```
+
+Concrete subclasses provide the implementations:
+
+```python
+import math
+
+class Circle(Shape):
+    def __init__(self, radius: float):
+        self.radius = radius
+
+    def area(self) -> float:
+        return math.pi * self.radius ** 2
+
+    def perimeter(self) -> float:
+        return 2 * math.pi * self.radius
+
+
+class Rectangle(Shape):
+    def __init__(self, width: float, height: float):
+        self.width = width
+        self.height = height
+
+    def area(self) -> float:
+        return self.width * self.height
+
+    def perimeter(self) -> float:
+        return 2 * (self.width + self.height)
+```
+
+Now we can use polymorphism — treat every `Shape` the same way regardless of the concrete type:
+
+```python
+shapes: list[Shape] = [Circle(5), Rectangle(4, 6)]
+
+for shape in shapes:
+    print(shape.describe())
+    assert shape.area() > 0
+    assert shape.perimeter() > 0
+```
+
+Key points:
+
+- Import `ABC` and `abstractmethod` from the `abc` module.
+- Decorate each required method with `@abstractmethod`.
+- Subclasses *must* implement every abstract method or they too become abstract.
+- Non-abstract methods (like `describe` above) are inherited as-is by all subclasses.
