@@ -11,6 +11,9 @@ import httpx
 
 def fetch_joke() -> str:
     """Fetch a random Chuck Norris joke from the API."""
+    # Randomly raise an exception to simulate a transient error
+    if random.random() < 0.5:
+        raise httpx.HTTPError("Simulated transient error")
     with httpx.Client() as client:
         response = client.get("https://api.chucknorris.io/jokes/random")
         response.raise_for_status()
