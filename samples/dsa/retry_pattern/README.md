@@ -40,11 +40,36 @@ Traceback (most recent call last):
 
 ## Solutions
 
-A summary of various solutions to address the problem.
+A summary of various solutions to address the problem. These can be implemented as functions that live within utility / library modules that can then be imported on the fly.
 
 ### Retry Function
 
-Lorem ipsum.
+The `retry_function.py` solution defines a **generic function** that executes an *operation* up to a certain number of times with a *fixed* delay.
+
+```python
+python .\retry_function.py           
+Attempt 1 failed: Simulated transient error
+Attempt 2 failed: Simulated transient error
+Attempt 3 failed: Simulated transient error
+There are two kinds of women in the world; those who have slept with Chuck Norris, and those who want to.
+```
+
+### Exponential Backoff
+
+Sometimes retrying a service too quickly may make things worse. You may overload a service or get rate limited (429), so just passing a fixed *delay* is not sufficient.
+
+A solution to this is *Exponential Backoff*, where each retry waits a bit longer than the last.
+
+```python
+python .\retry_exponential_backoff.py
+Attempt 1 failed: Simulated transient error
+Retrying in 1.00 seconds...
+Attempt 2 failed: Simulated transient error
+Retrying in 2.00 seconds...
+Attempt 3 failed: Simulated transient error
+Retrying in 4.00 seconds...
+Paul Newman has Chuck Norris's Own salad dressing and mayo.
+```
 
 ### Using a Decorator
 
@@ -52,4 +77,4 @@ Lorem ipsum.
 
 ### Using Tenacity (Recommended)
 
-Lorem ipsum.
+For production-ready code.

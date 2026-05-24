@@ -10,7 +10,7 @@ import httpx
 import time
 from typing import Callable
 
-def retry[T](operation: Callable[[], T], retries: int = 10, delay: float = 1.0) -> T:
+def retry[T](operation: Callable[[], T], retries: int = 5, delay: float = 1.0, backoff: float = 2.0) -> T:
     """Retry the given operation a certain number of times with a delay between attempts.
     
     Args:
@@ -32,7 +32,9 @@ def retry[T](operation: Callable[[], T], retries: int = 10, delay: float = 1.0) 
             print(f"Attempt {attempt} failed: {e}")
             if attempt == retries:
                 raise
-            time.sleep(delay)
+            sleep_time = delay * (backoff ** (attempt - 1))
+            print(f"Retrying in {sleep_time:.2f} seconds...")
+            time.sleep(sleep_time)
 
 
 def fetch_joke() -> str:
