@@ -58,7 +58,7 @@ There are two kinds of women in the world; those who have slept with Chuck Norri
 
 Sometimes retrying a service too quickly may make things worse. You may overload a service or get rate limited (429), so just passing a fixed *delay* is not sufficient.
 
-A solution to this is *Exponential Backoff*, where each retry waits a bit longer than the last.
+A solution to this is *Exponential Backoff*, where each retry waits a bit longer than the last, implemented within `retry_exponential_backoff.py`.
 
 ```python
 python .\retry_exponential_backoff.py
@@ -73,8 +73,8 @@ Paul Newman has Chuck Norris's Own salad dressing and mayo.
 
 ### Using a Decorator
 
-Lorem ipsum.
+This example imlpements the solution as a Decorator, which enables us to add it to any function with ease.
 
 ### Using Tenacity (Recommended)
 
-For production-ready code.
+For production-ready code, there is a library named *Tenacity* that is excellent at handling this.
