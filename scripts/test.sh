@@ -2,6 +2,8 @@
 #
 # Execute unit tests.
 
+set -e
+
 echo "Executing Unit Tests..."
 coverage run -m pytest tests/
 

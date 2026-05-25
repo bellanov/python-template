@@ -1,7 +1,9 @@
-ipython
-pytest
 black
 coverage
 flake8
+httpx
+ipython
 isort
 mypy
+pytest
+tenacity

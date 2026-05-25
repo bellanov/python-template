@@ -56,6 +56,7 @@ First, a local project environment needs to be created, then the project's modul
    source .venv/bin/activate
 
    # Windows
+   .venv\Scripts\activate
    .venv\Scripts\Activate.ps1
 
    # Install Dependencies
