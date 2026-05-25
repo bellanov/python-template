@@ -13,7 +13,7 @@ from tenacity import retry, stop_after_attempt, wait_exponential
 
 def log_before_sleep(retry_state):
     """Log retry attempt information.
-    
+
     Args:
         retry_state: Contains retry metadata with attributes:
             - attempt_number: Current attempt number (int)
@@ -23,10 +23,16 @@ def log_before_sleep(retry_state):
             - next_action: NextAction object with sleep duration
             - next_action.sleep: Seconds to wait before next try (float)
     """
-    print(f"Attempt {retry_state.attempt_number} failed. Waiting {retry_state.next_action.sleep}s before next try...")
+    print(
+        f"Attempt {retry_state.attempt_number} failed. Waiting {retry_state.next_action.sleep}s before next try..."
+    )
 
 
-@retry(stop=stop_after_attempt(5), wait=wait_exponential(multiplier=1, min=1, max=10), before_sleep=log_before_sleep)
+@retry(
+    stop=stop_after_attempt(5),
+    wait=wait_exponential(multiplier=1, min=1, max=10),
+    before_sleep=log_before_sleep,
+)
 def fetch_joke() -> str:
     """Fetch a random Chuck Norris joke from the API."""
     # Randomly raise an exception to simulate a transient error
