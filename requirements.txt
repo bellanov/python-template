@@ -6,3 +6,4 @@ ipython
 isort
 mypy
 pytest
+tenacity
