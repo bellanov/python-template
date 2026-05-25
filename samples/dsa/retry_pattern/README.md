@@ -73,8 +73,28 @@ Paul Newman has Chuck Norris's Own salad dressing and mayo.
 
 ### Using a Decorator
 
-This example imlpements the solution as a Decorator, which enables us to add it to any function with ease.
+This example imlpements the solution as a *Decorator*, which enables us to add it to any function with ease.
+
+```python
+python .\retry_decorator.py
+Attempt 1 failed: Simulated transient error
+Retrying in 1.00 seconds...
+Attempt 2 failed: Simulated transient error
+Retrying in 2.00 seconds...
+Attempt 3 failed: Simulated transient error
+Retrying in 4.00 seconds...
+Chuck Norris can spin a sword... on his finger.
+```
+
+### Fallback and Repair
+
+The solution can be improved further by adding *repair* or *fallback* steps. The *repair* steps execute *between* retries, peforming intermediary steps (i.e., validation, clean-up). The *fallback* step would execute once all retries have been exhaused. For instance, a *Backup API* link can then be used instead.
 
 ### Using Tenacity (Recommended)
 
 For production-ready code, there is a library named *Tenacity* that is excellent at handling this.
+
+
+## When You Shouldn't Use the Retry Pattern
+
+Test.
