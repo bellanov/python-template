@@ -5,7 +5,7 @@ certain number of times before giving up. This can be useful for handling transi
 network issues or temporary unavailability of a service.
 """
 
-import random
+# import random
 import time
 from typing import Callable
 
