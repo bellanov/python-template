@@ -1,18 +1,20 @@
 """Retry Pattern.
 
-The retry pattern is a design pattern that allows you to automatically retry a failed operation a 
-certain number of times before giving up. This can be useful for handling transient errors, such as 
+The retry pattern is a design pattern that allows you to automatically retry a failed operation a
+certain number of times before giving up. This can be useful for handling transient errors, such as
 network issues or temporary unavailability of a service.
 """
 
 import random
-import httpx
 import time
 from typing import Callable
 
+import httpx
+
+
 def retry[T](operation: Callable[[], T], retries: int = 10, delay: float = 1.0) -> T:
     """Retry the given operation a certain number of times with a delay between attempts.
-    
+
     Args:
         operation: A callable that performs the operation to be retried.
         retries: The maximum number of retry attempts.
@@ -23,7 +25,7 @@ def retry[T](operation: Callable[[], T], retries: int = 10, delay: float = 1.0) 
 
     Raises:
         The last exception raised by the operation if all retry attempts fail.
-    
+
     """
     for attempt in range(1, retries + 1):
         try:

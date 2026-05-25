@@ -4,17 +4,18 @@ Rich Text Template with Style Configuration
 A structured template for building styled terminal output using the `rich` library.
 """
 
+import logging
+
+from rich import box
 from rich.console import Console
-from rich.theme import Theme
-from rich.style import Style
+from rich.logging import RichHandler
 from rich.panel import Panel
+from rich.progress import BarColumn, Progress, SpinnerColumn, TextColumn
+from rich.rule import Rule
+from rich.style import Style
 from rich.table import Table
 from rich.text import Text
-from rich.rule import Rule
-from rich.progress import Progress, SpinnerColumn, BarColumn, TextColumn
-from rich.logging import RichHandler
-from rich import box
-import logging
+from rich.theme import Theme
 
 # ─────────────────────────────────────────────
 # STYLE CONFIGURATION
@@ -22,34 +23,30 @@ import logging
 
 STYLES = {
     # Semantic styles
-    "app.title":    Style(color="bright_cyan",   bold=True),
-    "app.subtitle": Style(color="cyan",          italic=True),
-    "app.header":   Style(color="bright_white",  bold=True, underline=True),
-
+    "app.title": Style(color="bright_cyan", bold=True),
+    "app.subtitle": Style(color="cyan", italic=True),
+    "app.header": Style(color="bright_white", bold=True, underline=True),
     # Status styles
-    "status.success": Style(color="bright_green",  bold=True),
+    "status.success": Style(color="bright_green", bold=True),
     "status.warning": Style(color="bright_yellow", bold=True),
-    "status.error":   Style(color="bright_red",    bold=True),
-    "status.info":    Style(color="bright_blue",   bold=True),
-    "status.muted":   Style(color="grey50",        italic=True),
-
+    "status.error": Style(color="bright_red", bold=True),
+    "status.info": Style(color="bright_blue", bold=True),
+    "status.muted": Style(color="grey50", italic=True),
     # Data styles
-    "data.key":      Style(color="bright_magenta"),
-    "data.value":    Style(color="white"),
-    "data.highlight":Style(color="bright_yellow",  bold=True),
-    "data.code":     Style(color="green",          bgcolor="grey7"),
-
+    "data.key": Style(color="bright_magenta"),
+    "data.value": Style(color="white"),
+    "data.highlight": Style(color="bright_yellow", bold=True),
+    "data.code": Style(color="green", bgcolor="grey7"),
     # Border / panel styles
     "panel.default": Style(color="bright_cyan"),
     "panel.warning": Style(color="bright_yellow"),
-    "panel.error":   Style(color="bright_red"),
-
+    "panel.error": Style(color="bright_red"),
     # Text styles
-    "text.bold":     Style(bold=True),
-    "text.italic":   Style(italic=True),
-    "text.dim":      Style(dim=True),
-    "text.strike":   Style(strike=True),
-    "text.link":     Style(color="bright_blue", underline=True),
+    "text.bold": Style(bold=True),
+    "text.italic": Style(italic=True),
+    "text.dim": Style(dim=True),
+    "text.strike": Style(strike=True),
+    "text.link": Style(color="bright_blue", underline=True),
 }
 
 THEME = Theme({k: str(v) for k, v in STYLES.items()})
@@ -61,11 +58,11 @@ THEME = Theme({k: str(v) for k, v in STYLES.items()})
 
 console = Console(
     theme=THEME,
-    highlight=True,      # Automatic syntax highlighting
-    markup=True,         # Enable Rich markup tags
-    emoji=True,          # Enable emoji rendering
-    record=False,        # Set True to capture output
-    width=100,           # Fixed width (or omit for auto)
+    highlight=True,  # Automatic syntax highlighting
+    markup=True,  # Enable Rich markup tags
+    emoji=True,  # Enable emoji rendering
+    record=False,  # Set True to capture output
+    width=100,  # Fixed width (or omit for auto)
 )
 
 
@@ -93,6 +90,7 @@ log = logging.getLogger("app")
 # HELPER FUNCTIONS
 # ─────────────────────────────────────────────
 
+
 def print_title(title: str, subtitle: str = "") -> None:
     """Render a prominent application title block."""
     console.print()
@@ -115,9 +113,9 @@ def print_status(message: str, level: str = "info") -> None:
     icons = {
         "success": ":white_check_mark:",
         "warning": ":warning:",
-        "error":   ":cross_mark:",
-        "info":    ":information:",
-        "muted":   ":speech_balloon:",
+        "error": ":cross_mark:",
+        "info": ":information:",
+        "muted": ":speech_balloon:",
     }
     icon = icons.get(level, ":information:")
     console.print(f"{icon}  [status.{level}]{message}[/status.{level}]")
@@ -134,8 +132,8 @@ def print_key_value(data: dict, title: str = "") -> None:
     )
     if title:
         table.title = f"[app.header]{title}[/app.header]"
-    table.add_column("Key",   style="data.key",   no_wrap=True)
-    table.add_column("Value", style="data.value",  no_wrap=False)
+    table.add_column("Key", style="data.key", no_wrap=True)
+    table.add_column("Value", style="data.value", no_wrap=False)
 
     for key, value in data.items():
         table.add_row(str(key), str(value))
@@ -165,6 +163,7 @@ def print_panel(
 def print_code(snippet: str, language: str = "python") -> None:
     """Render a syntax-highlighted code block."""
     from rich.syntax import Syntax
+
     syntax = Syntax(snippet, language, theme="monokai", line_numbers=True)
     console.print(syntax)
 
@@ -195,32 +194,33 @@ def run_with_progress(tasks: list[dict]) -> None:
 # DEMO / ENTRY POINT
 # ─────────────────────────────────────────────
 
+
 def main() -> None:
     print_title("My Rich App", subtitle="Terminal UI with styled output")
 
     print_section("Status Messages")
     print_status("Operation completed successfully.", level="success")
-    print_status("Disk usage above 80%.",             level="warning")
-    print_status("Connection refused on port 5432.",  level="error")
+    print_status("Disk usage above 80%.", level="warning")
+    print_status("Connection refused on port 5432.", level="error")
     print_status("Listening on http://localhost:8000", level="info")
-    print_status("Debug mode is active.",              level="muted")
+    print_status("Debug mode is active.", level="muted")
 
     print_section("Key / Value Data")
     print_key_value(
         {
-            "Environment":  "production",
-            "Version":      "3.2.1",
-            "Database":     "postgres://localhost:5432/mydb",
-            "Workers":      "4",
-            "Debug":        "False",
+            "Environment": "production",
+            "Version": "3.2.1",
+            "Database": "postgres://localhost:5432/mydb",
+            "Workers": "4",
+            "Debug": "False",
         },
         title="Configuration",
     )
 
     print_section("Panels")
-    print_panel("Everything is running smoothly.", title="System OK",  level="default")
-    print_panel("Certificate expires in 7 days.",  title="Warning",    level="warning")
-    print_panel("Failed to reach upstream API.",   title="Error",      level="error")
+    print_panel("Everything is running smoothly.", title="System OK", level="default")
+    print_panel("Certificate expires in 7 days.", title="Warning", level="warning")
+    print_panel("Failed to reach upstream API.", title="Error", level="error")
 
     print_section("Code Snippet")
     print_code(
@@ -243,11 +243,13 @@ def main() -> None:
             time.sleep(0.05)
             progress.advance(task_id)
 
-    run_with_progress([
-        {"name": "Loading config",   "steps": 10, "fn": fake_task},
-        {"name": "Connecting to DB", "steps": 10, "fn": fake_task},
-        {"name": "Syncing data",     "steps": 10, "fn": fake_task},
-    ])
+    run_with_progress(
+        [
+            {"name": "Loading config", "steps": 10, "fn": fake_task},
+            {"name": "Connecting to DB", "steps": 10, "fn": fake_task},
+            {"name": "Syncing data", "steps": 10, "fn": fake_task},
+        ]
+    )
 
     print_status("All tasks complete!", level="success")
     console.print()

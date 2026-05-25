@@ -1,32 +1,35 @@
 """Retry Pattern.
 
-The retry pattern is a design pattern that allows you to automatically retry a failed operation a 
-certain number of times before giving up. This can be useful for handling transient errors, such as 
+The retry pattern is a design pattern that allows you to automatically retry a failed operation a
+certain number of times before giving up. This can be useful for handling transient errors, such as
 network issues or temporary unavailability of a service.
 """
 
 import random
-import httpx
 import time
-from typing import Callable, Any
 from functools import wraps
+from typing import Any, Callable
+
+import httpx
 
 
-def retry_decorator[T](retries: int = 5, delay: float = 1.0, backoff: float = 2.0) -> Callable[..., T]:
+def retry_decorator[T](
+    retries: int = 5, delay: float = 1.0, backoff: float = 2.0
+) -> Callable[..., T]:
     """Define a decorator for retrying a function upon failure.
-        
-        Args:
-            retries: The maximum number of retry attempts.
-            delay: The delay in seconds between retry attempts.
-            backoff: The multiplier for the delay between attempts (exponential backoff).
 
-        Returns:
-            The decorated function.
-        """
-    
+    Args:
+        retries: The maximum number of retry attempts.
+        delay: The delay in seconds between retry attempts.
+        backoff: The multiplier for the delay between attempts (exponential backoff).
+
+    Returns:
+        The decorated function.
+    """
+
     def decorator[T](operation: Callable[..., T]) -> Callable[..., T]:
         """Retry the given operation a certain number of times with a delay between attempts.
-        
+
         Args:
             operation: A callable that performs the operation to be retried.
 
@@ -36,6 +39,7 @@ def retry_decorator[T](retries: int = 5, delay: float = 1.0, backoff: float = 2.
         Raises:
             The last exception raised by the operation if all retry attempts fail.
         """
+
         @wraps(operation)
         def wrapper(*args: Any, **kwargs: Any) -> T:
             for attempt in range(1, retries + 1):
@@ -50,7 +54,9 @@ def retry_decorator[T](retries: int = 5, delay: float = 1.0, backoff: float = 2.
                     time.sleep(sleep_time)
 
         return wrapper
+
     return decorator
+
 
 @retry_decorator()
 def fetch_joke() -> str:
