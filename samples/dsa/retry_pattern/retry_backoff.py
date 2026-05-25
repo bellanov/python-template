@@ -38,6 +38,7 @@ def retry_decorator[T](retries: int = 5, delay: float = 1.0, backoff: float = 2.
         """
         @wraps(operation)
         def wrapper(*args: Any, **kwargs: Any) -> T:
+            """Wrap the operation with retry logic."""
             for attempt in range(1, retries + 1):
                 try:
                     return operation()
