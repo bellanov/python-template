@@ -101,6 +101,12 @@ That solution is implemented within the `retry_tenacity.py` example.
 
 ## FAQ
 
+When is the Retry Pattern a good solution?
+
+- If an error is temporary (Network Hiccup, Rate Limit, LLM Failure).
+- An operation is safe to repeat.
+- If there is a need for more resilient backend code.
+
 When shouldn't you retry the same thing?
 
 In some cases, retrying the task over and over will just make things worse.
@@ -111,3 +117,6 @@ In some cases, retrying the task over and over will just make things worse.
 - *Server is Down*
   - If the server being targeted is down, then any and all retry attempts will fail. 
   - Using a fallback strategy is recommended if behavior can be unexpected.
+
+- *Invalid User Input*
+  - If a user has provided invalid input, then the requests will continously fail, even when repeated.
