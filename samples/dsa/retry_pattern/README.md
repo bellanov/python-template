@@ -90,11 +90,21 @@ Chuck Norris can spin a sword... on his finger.
 
 The solution can be improved further by adding *repair* or *fallback* steps. The *repair* steps execute *between* retries, peforming intermediary steps (i.e., validation, clean-up). The *fallback* step would execute once all retries have been exhaused. For instance, a *Backup API* link can then be used instead.
 
+The `retry_fallback.py` example implements this solution. The `retry_fallback_optimized.py` example further improves upon the initial design.
+
 ### Using Tenacity (Recommended)
 
 For production-ready code, there is a library named *Tenacity* that is excellent at handling this.
 
 
-## When You Shouldn't Use the Retry Pattern
+## FAW
 
-Test.
+When shouldn't you retry the same thing?
+
+In some cases, retrying the task over and over will just make things worse.
+
+- Invalid API Credentials
+  - If API credentials are invalid, then it doesn't matter how many times you retry the operation, it will always result in failure.
+- Server is Down
+  - If the server being targeted is down, then any and all retry attempts will fail. 
+  - Using a fallback strategy is recommended if behavior can be unexpected.
