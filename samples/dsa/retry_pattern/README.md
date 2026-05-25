@@ -94,17 +94,20 @@ The `retry_fallback.py` example implements this solution. The `retry_fallback_op
 
 ### Using Tenacity (Recommended)
 
-For production-ready code, there is a library named *Tenacity* that is excellent at handling this.
+For production-ready code, there is a library named *Tenacity* that is excellent at handling this. It provides a well-defined decorator that provides all sorts of functionality beyond the existing examples.
+
+That solution is implemented within the `retry_tenacity.py` example.
 
 
-## FAW
+## FAQ
 
 When shouldn't you retry the same thing?
 
 In some cases, retrying the task over and over will just make things worse.
 
-- Invalid API Credentials
+- *Invalid API Credentials*
   - If API credentials are invalid, then it doesn't matter how many times you retry the operation, it will always result in failure.
-- Server is Down
+
+- *Server is Down*
   - If the server being targeted is down, then any and all retry attempts will fail. 
   - Using a fallback strategy is recommended if behavior can be unexpected.
