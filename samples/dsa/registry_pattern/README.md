@@ -4,7 +4,7 @@ Summary of the *Registry Pattern* and its usage.
 
 ## Description
 
-The **Registry Pattern** is a central store for objects/classes, allowing lookup by name. It provides a central location for your application to access resources, rather than duplicating imports across multiple files.
+The **Registry Pattern** is a central store for objects/classes, allowing lookup by name. It provides a central location for your application to access functionality, rather than duplicating code or imports across multiple files.
 
 **Key Benefits:**
 
