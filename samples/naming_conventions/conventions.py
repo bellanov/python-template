@@ -1,3 +1,9 @@
+"""Naming Conventions.
+
+Overview of Python naming conventions, including variable names, function names,
+class names, and more.
+"""
+
 MAX_CONNECTIONS = 10  # constant
 
 
