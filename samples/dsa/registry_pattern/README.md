@@ -48,6 +48,11 @@ class JsonExporter:
     def export(self, data):
         return f"Exporting {data} as JSON"
 
+@PluginRegistry.register("excel")
+class ExcelExporter:
+    def export(self, data):
+        return f"Exporting {data} as EXCEL"
+
 
 # --- Using the registry ---
 
