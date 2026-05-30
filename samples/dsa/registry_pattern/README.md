@@ -48,16 +48,21 @@ class JsonExporter:
     def export(self, data):
         return f"Exporting {data} as JSON"
 
-@PluginRegistry.register("excel")
-class ExcelExporter:
-    def export(self, data):
-        return f"Exporting {data} as EXCEL"
-
-
 # --- Using the registry ---
 
 format_type = "json"
 exporter = PluginRegistry.get(format_type)()
 print(exporter.export({"key": "value"}))
 # Output: Exporting {'key': 'value'} as JSON
+```
+
+For instance, adding a new plugging is as simple as declaring a new class using the decorator.
+
+In this example, a new plugin for exporting to Excel is being implemented.
+
+```sh
+@PluginRegistry.register("excel")
+class ExcelExporter:
+    def export(self, data):
+        return f"Exporting {data} as EXCEL"
 ```
