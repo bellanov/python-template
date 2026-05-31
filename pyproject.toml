@@ -30,3 +30,6 @@ omit = [
     "tests/*",
     "*/test_*.py",
 ]
+
+[tool.isort]
+profile = "black"
