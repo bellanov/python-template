@@ -56,7 +56,7 @@ print(exporter.export({"key": "value"}))
 # Output: Exporting {'key': 'value'} as JSON
 ```
 
-For instance, adding a new plugging is as simple as declaring a new class using the decorator.
+For instance, adding a new plugin is as simple as declaring a new class using the decorator.
 
 In this example, a new plugin for exporting to Excel is being implemented.
 
