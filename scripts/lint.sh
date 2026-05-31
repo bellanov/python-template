@@ -2,6 +2,8 @@
 #
 # Lint Code Base.
 
+set -e
+
 # Lint Code
 echo "Linting code base..."
 
