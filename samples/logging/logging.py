@@ -10,7 +10,6 @@ import logging.handlers
 import sys
 from pathlib import Path
 
-
 # ─────────────────────────────────────────────
 # PATTERN 1: Module-level logger
 #
@@ -64,6 +63,7 @@ def configure_logging(level: int = logging.DEBUG, log_file: Path | None = None) 
 # PATTERN 3: Log levels — use the right one
 # ─────────────────────────────────────────────
 
+
 def demonstrate_log_levels() -> None:
     """Show each log level and when to use it."""
     logger.debug("DEBUG: fine-grained detail useful during development")
@@ -80,6 +80,7 @@ def demonstrate_log_levels() -> None:
 # It automatically includes the full stack trace
 # without needing to pass exc_info=True manually.
 # ─────────────────────────────────────────────
+
 
 def divide(a: float, b: float) -> float | None:
     """Return a / b, logging any error."""
@@ -98,9 +99,12 @@ def divide(a: float, b: float) -> float | None:
 # is disabled, saving CPU on hot code paths.
 # ─────────────────────────────────────────────
 
+
 def process_items(items: list[str]) -> None:
     for item in items:
-        logger.debug("Processing item: %s", item)   # ✅ lazy — only formatted if DEBUG enabled
+        logger.debug(
+            "Processing item: %s", item
+        )  # ✅ lazy — only formatted if DEBUG enabled
         # logger.debug(f"Processing item: {item}")  # ❌ always formats the string
 
 
@@ -112,11 +116,12 @@ def process_items(items: list[str]) -> None:
 # need handlers on the root (or a shared ancestor).
 # ─────────────────────────────────────────────
 
+
 def demonstrate_hierarchy() -> None:
     """Show how parent/child loggers share configuration."""
     parent_logger = logging.getLogger("myapp")
-    child_logger = logging.getLogger("myapp.database")   # child of myapp
-    sibling_logger = logging.getLogger("myapp.cache")    # sibling
+    child_logger = logging.getLogger("myapp.database")  # child of myapp
+    sibling_logger = logging.getLogger("myapp.cache")  # sibling
 
     parent_logger.info("myapp logger")
     child_logger.info("myapp.database logger — propagates to myapp then root")
@@ -129,6 +134,7 @@ def demonstrate_hierarchy() -> None:
 # Add consistent context (e.g. request_id, user_id) to every message
 # in a given scope without threading it through every function call.
 # ─────────────────────────────────────────────
+
 
 class RequestAdapter(logging.LoggerAdapter):
     """Prepend request context to every log message."""
@@ -149,6 +155,7 @@ def handle_request(request_id: str) -> None:
 # ─────────────────────────────────────────────
 # ENTRY POINT
 # ─────────────────────────────────────────────
+
 
 def main() -> None:
     configure_logging(level=logging.DEBUG, log_file=Path("app.log"))
