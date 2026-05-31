@@ -18,6 +18,9 @@ def retry[T](
     delay: float = 1.0,
     backoff: float = 2.0,
 ) -> T:
+    
+    if not operations:
+        raise ValueError("At least one operation must be provided.")
 
     for attempt, operation in enumerate(operations):
         try:

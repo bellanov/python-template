@@ -47,17 +47,15 @@ def retry_decorator[T](
             """Wrap the operation with retry logic."""
             for attempt in range(1, retries + 1):
                 try:
-                    return operation()
+                    return operation(*args, **kwargs)
                 except Exception as e:
                     print(f"Attempt {attempt} failed: {e}")
                     if attempt == retries:
                         print("All retry attempts failed. Using backup function...")
-                        return backup_fn()
+                        return backup_fn(*args, **kwargs)
                     sleep_time = delay * (backoff ** (attempt - 1))
                     print(f"Retrying in {sleep_time:.2f} seconds...")
                     time.sleep(sleep_time)
-
-            return backup_fn()
 
         return wrapper
 
