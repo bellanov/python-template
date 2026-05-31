@@ -60,7 +60,7 @@ For instance, adding a new plugin is as simple as declaring a new class using th
 
 In this example, a new plugin for exporting to Excel is being implemented.
 
-```sh
+```python
 @PluginRegistry.register("excel")
 class ExcelExporter:
     def export(self, data):
