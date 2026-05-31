@@ -15,12 +15,12 @@ Each section is self-contained and runnable.
 # ─────────────────────────────────────────────
 
 
-def append_bad(value, result=[]):      # ❌ shared list across all calls
+def append_bad(value, result=[]):  # ❌ shared list across all calls
     result.append(value)
     return result
 
 
-def append_good(value, result=None):   # ✅ create a fresh list each call
+def append_good(value, result=None):  # ✅ create a fresh list each call
     if result is None:
         result = []
     result.append(value)
@@ -36,13 +36,13 @@ def append_good(value, result=None):   # ✅ create a fresh list each call
 
 
 def check_none_bad(value):
-    if value == None:                  # ❌ fragile; custom __eq__ can fool this
+    if value == None:  # ❌ fragile; custom __eq__ can fool this
         return "nothing"
     return value
 
 
 def check_none_good(value):
-    if value is None:                  # ✅ identity check — always correct
+    if value is None:  # ✅ identity check — always correct
         return "nothing"
     return value
 
@@ -59,7 +59,7 @@ def read_file_bad(path: str):
     try:
         with open(path) as f:
             return f.read()
-    except:                            # ❌ catches EVERYTHING, including KeyboardInterrupt
+    except:  # ❌ catches EVERYTHING, including KeyboardInterrupt
         return None
 
 
@@ -67,7 +67,7 @@ def read_file_good(path: str):
     try:
         with open(path) as f:
             return f.read()
-    except FileNotFoundError:          # ✅ only the specific error we expect
+    except FileNotFoundError:  # ✅ only the specific error we expect
         return None
 
 
@@ -83,12 +83,12 @@ def read_file_good(path: str):
 def build_csv_bad(items: list[str]) -> str:
     result = ""
     for item in items:
-        result += item + ","           # ❌ O(N²) — new string on every iteration
+        result += item + ","  # ❌ O(N²) — new string on every iteration
     return result.rstrip(",")
 
 
 def build_csv_good(items: list[str]) -> str:
-    return ",".join(items)             # ✅ O(N) — single allocation
+    return ",".join(items)  # ✅ O(N) — single allocation
 
 
 # ─────────────────────────────────────────────
@@ -100,12 +100,12 @@ def build_csv_good(items: list[str]) -> str:
 
 
 def print_items_bad(items: list[str]) -> None:
-    for i in range(len(items)):        # ❌ manual index, verbose
+    for i in range(len(items)):  # ❌ manual index, verbose
         print(i, items[i])
 
 
 def print_items_good(items: list[str]) -> None:
-    for i, item in enumerate(items):   # ✅ idiomatic, clear, safe
+    for i, item in enumerate(items):  # ✅ idiomatic, clear, safe
         print(i, item)
 
 
@@ -118,13 +118,13 @@ def print_items_good(items: list[str]) -> None:
 
 
 def write_file_bad(path: str, content: str) -> None:
-    f = open(path, "w")                # ❌ file stays open if an exception is raised
+    f = open(path, "w")  # ❌ file stays open if an exception is raised
     f.write(content)
     f.close()
 
 
 def write_file_good(path: str, content: str) -> None:
-    with open(path, "w") as f:         # ✅ guaranteed close via __exit__
+    with open(path, "w") as f:  # ✅ guaranteed close via __exit__
         f.write(content)
 
 
@@ -147,7 +147,7 @@ def get_discount_bad(tier: str) -> float:
 def get_discount_good(tier: str) -> float:
     discounts = {"gold": 0.20, "silver": 0.10}
     if tier not in discounts:
-        raise ValueError(f"Unknown tier: {tier!r}")   # ✅ fail loudly
+        raise ValueError(f"Unknown tier: {tier!r}")  # ✅ fail loudly
     return discounts[tier]
 
 
@@ -162,12 +162,12 @@ def get_discount_good(tier: str) -> float:
 def remove_evens_bad(numbers: list[int]) -> list[int]:
     for n in numbers:
         if n % 2 == 0:
-            numbers.remove(n)          # ❌ mutates the list being iterated — skips items
+            numbers.remove(n)  # ❌ mutates the list being iterated — skips items
     return numbers
 
 
 def remove_evens_good(numbers: list[int]) -> list[int]:
-    return [n for n in numbers if n % 2 != 0]   # ✅ build a new list
+    return [n for n in numbers if n % 2 != 0]  # ✅ build a new list
 
 
 # ─────────────────────────────────────────────
@@ -179,12 +179,12 @@ def remove_evens_good(numbers: list[int]) -> list[int]:
 
 
 def set_age_bad(age: int) -> None:
-    assert age >= 0, "Age cannot be negative"   # ❌ disabled with -O flag
+    assert age >= 0, "Age cannot be negative"  # ❌ disabled with -O flag
 
 
 def set_age_good(age: int) -> None:
     if age < 0:
-        raise ValueError(f"Age cannot be negative, got {age}")   # ✅ always enforced
+        raise ValueError(f"Age cannot be negative, got {age}")  # ✅ always enforced
 
 
 # ─────────────────────────────────────────────
@@ -196,13 +196,13 @@ def set_age_good(age: int) -> None:
 
 
 def shadow_bad():
-    list = [1, 2, 3]                   # ❌ shadows the built-in list type
+    list = [1, 2, 3]  # ❌ shadows the built-in list type
     # list([1, 2])                     # would now raise TypeError
     return list
 
 
 def shadow_good():
-    numbers = [1, 2, 3]               # ✅ descriptive name, no shadowing
+    numbers = [1, 2, 3]  # ✅ descriptive name, no shadowing
     return numbers
 
 
@@ -214,10 +214,10 @@ def shadow_good():
 def main() -> None:
     # Mistake 1 — mutable default
     print("=== Mutable Default Argument ===")
-    print(append_bad(1))              # [1]
-    print(append_bad(2))              # [1, 2]  ← shared state bug!
-    print(append_good(1))             # [1]
-    print(append_good(2))             # [2]     ← fresh list each time
+    print(append_bad(1))  # [1]
+    print(append_bad(2))  # [1, 2]  ← shared state bug!
+    print(append_good(1))  # [1]
+    print(append_good(2))  # [2]     ← fresh list each time
 
     # Mistake 4 — string concatenation
     print("\n=== String Building ===")
