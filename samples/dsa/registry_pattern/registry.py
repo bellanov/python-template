@@ -42,7 +42,13 @@ class ExcelExporter:
 
 # --- Using the registry ---
 
-format_type = "json"
-exporter = PluginRegistry.get(format_type)()
-print(exporter.export({"key": "value"}))
-# Output: Exporting {'key': 'value'} as JSON
+
+def main() -> None:
+    format_type = "json"
+    exporter = PluginRegistry.get(format_type)()
+    print(exporter.export({"key": "value"}))
+    # Output: Exporting {'key': 'value'} as JSON
+
+
+if __name__ == "__main__":
+    main()
