@@ -15,6 +15,7 @@ A series of Python *samples* are available spanning the categories below.
 | [*dsa*](https://github.com/bellanov/python-samples/tree/main/samples/dsa) | Data Structures and Algorithms (DSA). |
 | [*exceptions*](https://github.com/bellanov/python-samples/tree/main/samples/exceptions) | Overview of *Exceptions* and their usage. |
 | [*functions*](https://github.com/bellanov/python-samples/tree/main/samples/functions) | Overview of *Functions* and their usage. |
+| [*generators*](https://github.com/bellanov/python-samples/tree/main/samples/generators) | Good design patterns for *Generators* in Python. |
 | [*hello_world*](https://github.com/bellanov/python-samples/tree/main/samples/hello_world) | A very simple *Python* program. |
 | [*introduction*](https://github.com/bellanov/python-samples/tree/main/samples/introduction) | A general introduction to the *Python* programming language. |
 | [*iterables_and_generators*](https://github.com/bellanov/python-samples/tree/main/samples/iterables_and_generators) | Overview of *Iterables & Generators* and their usage. |
