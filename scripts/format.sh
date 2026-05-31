@@ -10,7 +10,3 @@ isort tests
 # Format Code
 echo "Formatting code base..."
 black samples 
-
-# Format Tests
-echo "Formatting tests..."
-black tests

@@ -14,7 +14,6 @@ from rich.progress import BarColumn, Progress, SpinnerColumn, TextColumn
 from rich.rule import Rule
 from rich.style import Style
 from rich.table import Table
-from rich.text import Text
 from rich.theme import Theme
 
 # ─────────────────────────────────────────────

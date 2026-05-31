@@ -7,8 +7,7 @@ network issues or temporary unavailability of a service.
 
 import random
 import time
-from functools import wraps
-from typing import Any, Callable
+from typing import Callable
 
 import httpx
 
@@ -18,6 +17,9 @@ def retry[T](
     delay: float = 1.0,
     backoff: float = 2.0,
 ) -> T:
+
+    if not operations:
+        raise ValueError("At least one operation must be provided.")
 
     for attempt, operation in enumerate(operations):
         try:
