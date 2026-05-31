@@ -22,7 +22,6 @@ from concurrent.futures import (
     as_completed,
 )
 
-
 # ─────────────────────────────────────────────
 # Worker functions
 #
@@ -33,7 +32,7 @@ from concurrent.futures import (
 
 def fetch_url(url: str) -> tuple[str, int]:
     """Simulate an I/O-bound HTTP request."""
-    time.sleep(0.05)                   # stand-in for real network latency
+    time.sleep(0.05)  # stand-in for real network latency
     return url, 200
 
 
