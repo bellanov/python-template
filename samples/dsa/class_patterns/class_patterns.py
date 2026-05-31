@@ -31,6 +31,7 @@ from typing import Callable
 @dataclass(frozen=True)
 class Point:
     """Immutable 2-D point — equality and hashing come for free."""
+
     x: float
     y: float
 
@@ -41,6 +42,7 @@ class Point:
 @dataclass
 class Order:
     """Mutable order with a default-factory for the line items list."""
+
     customer: str
     items: list[str] = field(default_factory=list)  # never share a mutable default
     total: float = 0.0
@@ -153,6 +155,7 @@ class QueryBuilder:
 
 class ReprMixin:
     """Auto __repr__ that lists all public instance attributes."""
+
     def __repr__(self) -> str:
         attrs = ", ".join(f"{k}={v!r}" for k, v in self.__dict__.items())
         return f"{type(self).__name__}({attrs})"
@@ -160,6 +163,7 @@ class ReprMixin:
 
 class SerializeMixin:
     """Serialize instance to / from a plain dict."""
+
     def to_dict(self) -> dict:
         return dict(self.__dict__)
 
@@ -208,7 +212,7 @@ class Product:
 
     def __init__(self, name: str, price: float, weight: float) -> None:
         self.name = name
-        self.price = price    # routed through PositiveFloat.__set__
+        self.price = price  # routed through PositiveFloat.__set__
         self.weight = weight
 
     def __repr__(self) -> str:
@@ -319,6 +323,7 @@ class CsvExporter(DataExporter):
 class JsonExporter(DataExporter):
     def _transform(self, data: list[dict]) -> str:
         import json
+
         return json.dumps(data, indent=2)
 
     def _export(self, content: str) -> None:
@@ -336,6 +341,7 @@ class JsonExporter(DataExporter):
 
 class Vector:
     """Memory-efficient 3-D vector using __slots__."""
+
     __slots__ = ("x", "y", "z")
 
     def __init__(self, x: float, y: float, z: float) -> None:
@@ -345,7 +351,7 @@ class Vector:
         return Vector(self.x + other.x, self.y + other.y, self.z + other.z)
 
     def magnitude(self) -> float:
-        return (self.x ** 2 + self.y ** 2 + self.z ** 2) ** 0.5
+        return (self.x**2 + self.y**2 + self.z**2) ** 0.5
 
     def __repr__(self) -> str:
         return f"Vector({self.x}, {self.y}, {self.z})"
@@ -436,7 +442,7 @@ def main() -> None:
     print(f"  {v1} + {v2} = {v1 + v2}")
     print(f"  magnitude({v1}) = {v1.magnitude():.4f}")
     try:
-        v1.color = "red"           # __slots__ blocks arbitrary attributes
+        v1.color = "red"  # __slots__ blocks arbitrary attributes
     except AttributeError as e:
         print(f"  Caught: {e}")
 
