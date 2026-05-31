@@ -14,7 +14,6 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from typing import Protocol
 
-
 # ─────────────────────────────────────────────
 # APPROACH 1: ABC-based Strategy
 #
@@ -137,11 +136,13 @@ CompressionFn = Callable[[bytes], bytes]
 
 def gzip_compress(data: bytes) -> bytes:
     import gzip
+
     return gzip.compress(data)
 
 
 def zlib_compress(data: bytes) -> bytes:
     import zlib
+
     return zlib.compress(data)
 
 
@@ -174,7 +175,7 @@ def main() -> None:
     sorter = Sorter(BubbleSort())
     print("BubbleSort:", sorter.sort(data))
 
-    sorter.set_strategy(MergeSort())          # swap at runtime
+    sorter.set_strategy(MergeSort())  # swap at runtime
     print("MergeSort: ", sorter.sort(data))
 
     # Approach 2 — Protocol
