@@ -21,6 +21,7 @@ A series of Python *samples* are available spanning the categories below.
 | [*iterables_and_generators*](https://github.com/bellanov/python-samples/tree/main/samples/iterables_and_generators) | Overview of *Iterables & Generators* and their usage. |
 | [*list_comprehensions*](https://github.com/bellanov/python-samples/tree/main/samples/list_comprehensions) | Overview of *List Comprehensions* and their usage. |
 | [*lists*](https://github.com/bellanov/python-samples/tree/main/samples/lists) | Overview of *Lists* and their usage. |
+| [*logging*](https://github.com/bellanov/python-samples/tree/main/samples/logging) | Good design patterns for *Logging* in Python. |
 | [*modules*](https://github.com/bellanov/python-samples/tree/main/samples/modules) | Overview of *Modules* and their usage. |
 | [*naming_conventions*](https://github.com/bellanov/python-samples/tree/main/samples/naming_conventions) | Overview of *Naming Conventions* in Python. |
 | [*randomness*](https://github.com/bellanov/python-samples/tree/main/samples/randomness) | Overview of *Randomness* in Python. |
