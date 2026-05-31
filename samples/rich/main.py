@@ -14,7 +14,6 @@ from rich.progress import BarColumn, Progress, SpinnerColumn, TextColumn
 from rich.rule import Rule
 from rich.style import Style
 from rich.table import Table
-
 # Uncomment below if you need to use Text objects for advanced styling
 # from rich.text import Text
 from rich.theme import Theme
