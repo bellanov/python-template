@@ -8,6 +8,7 @@ A series of Python *samples* are available spanning the categories below.
 | [*assert*](https://github.com/bellanov/python-samples/tree/main/samples/assert) | Overview of *assert* and its usage. |
 | [*asychronous_programming*](https://github.com/bellanov/python-samples/tree/main/samples/asychronous_programming) | Overview of *Asynchronous Programming* in Python. |
 | [*classes*](https://github.com/bellanov/python-samples/tree/main/samples/classes) | Overview of *Classes / Object-Oriented Programming (OOP)* and their usage. |
+| [*common_mistakes*](https://github.com/bellanov/python-samples/tree/main/samples/common_mistakes) | Rookie / amateur mistakes to avoid in Python. |
 | [*control_flow*](https://github.com/bellanov/python-samples/tree/main/samples/control_flow) | Overview of *Control Flow* and its usage. |
 | [*counters*](https://github.com/bellanov/python-samples/tree/main/samples/counters) | Overview of *Counters* and their usage. |
 | [*defaultdict*](https://github.com/bellanov/python-samples/tree/main/samples/defaultdict) | Overview of *defaultdict* and its usage. |
