@@ -6,3 +6,4 @@ Advanced samples and topics in *Data Structures and Algorithms (DSA)*.
 |---|---|
 | [*concurrency_futures*](https://github.com/bellanov/python-samples/tree/main/samples/args_kwargs) | Overview of the *concurrent.futures* module and its usage. |
 | [*retry_pattern*](https://github.com/bellanov/python-samples/tree/main/samples/args_kwargs) | Overview of the *Retry Pattern* and its usage. |
+| [*strategy_pattern*](https://github.com/bellanov/python-samples/tree/main/samples/dsa/strategy_pattern) | Overview of the *Strategy Pattern* and its usage. |
