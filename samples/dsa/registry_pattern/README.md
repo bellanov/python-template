@@ -15,7 +15,7 @@ The **Registry Pattern** is a central store for objects/classes, allowing lookup
 
 ## Solutions
 
-The solution uses a class to create central location to register and access various **plugins** responsible for *exporting* data into various formats. A **decorator** is used to provide a convenient method of *registering* additonal plugins.
+The solution uses a class to create central location to register and access various **plugins** responsible for *exporting* data into various formats. A **decorator** is used to provide a convenient method of *registering* additional plugins.
 
 ```python
 class PluginRegistry:
