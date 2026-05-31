@@ -153,7 +153,7 @@ def fetch_with_timeout(urls: list[str], timeout: float = 5.0) -> None:
             for future in as_completed(future_to_url, timeout=timeout):
                 url = future_to_url[future]
                 url_result, status = future.result()
-                print(f"  {status} {url_result}")
+                print(f"  {status} {url_result} {url}")
         except TimeoutError:
             print("  [timeout] Some tasks did not finish in time")
 
