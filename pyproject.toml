@@ -18,6 +18,17 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 
+[project.optional-dependencies]
+dev = [
+    "black",
+    "coverage",
+    "flake8",
+    "ipython",
+    "isort",
+    "mypy",
+    "pytest",
+]
+
 [tool.hatch.build.targets.wheel]
 packages = ["python_template/"]
 
