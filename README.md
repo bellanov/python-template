@@ -60,7 +60,7 @@ First, a local project environment needs to be created, then the project's modul
    .venv\Scripts\Activate.ps1
 
    # Install Dependencies
-   pip install -r requirements.txt 
+   pip install -e ".[dev]"
 
    # Deactivate Virtual Environment
    deactivate
