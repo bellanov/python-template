@@ -17,6 +17,21 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+dependencies = [
+    "httpx",
+    "tenacity",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "coverage",
+    "flake8",
+    "ipython",
+    "isort",
+    "mypy",
+    "pytest",
+]
 
 [tool.hatch.build.targets.wheel]
 packages = ["samples/"]
