@@ -5,7 +5,6 @@
 # Format Imports
 echo "Formatting imports..."
 isort samples
-isort tests
 
 # Format Code
 echo "Formatting code base..."
