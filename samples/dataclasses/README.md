@@ -66,36 +66,53 @@ This behavior is typical in regular classes. With Dataclasses, you would prefer 
 
 - *Comparing Data*
 
-    With data, you may sometimes want to do deeper comparisons, where you take into account multiple class attributes. Also, if the data is the same, you would expect the objects to be the same.
+    With data, you may sometimes want to do deeper comparisons, where you take into account multiple `Class` attributes. Also, if the data is the same, you would expect the objects to be the same.
 
 Dataclasses address the problems in the above scenarios.
 
-1. To convert this Class into a Dataclass, first you import the dataclass module.
+1. To convert this `Class` into a Dataclass, first you import the dataclass module.
 
-```python
-from dataclasses import dataclass
-```
+    ```python
+    from dataclasses import dataclass
+    ```
 
 2. Decorate the class with the `@dataclass` decorator.
 
-```python
-@dataclass
-class Person:
-    name: str
-    job: str
-    age: str
-```
+    ```python
+    @dataclass
+    class Person:
+        name: str
+        job: str
+        age: str
+    ```
 
 3. There is a built-in initializer helps you fill in objects very quickly, eliminating the need for an `__init__` function, so remove it.
 
-```python
-@dataclass
-class Person:
-    name: str
-    job: str
-    age: str
+    ```python
+    @dataclass
+    class Person:
+        name: str
+        job: str
+        age: str
 
-person1 = Person("Alice", "Engineer", "30")
-person2 = Person("Charlie", "Manager", "30")
-person3 = Person("Charlie", "Manager", "40")
-```
+    person1 = Person("Alice", "Engineer", "30")
+    person2 = Person("Charlie", "Manager", "30")
+    person3 = Person("Charlie", "Manager", "40")
+    ```
+
+    This already makes the code more readable by eliminating unnecessary lines from every `Class` we create.
+
+4. We also receive a different result when executing the same program.
+
+    ```sh
+    Person(name='Alice', job='Engineer', age='30')
+    1164363942480
+    1164363952720
+    True
+    ```
+
+    Instead of the cryptic memory address, we now receive a more readable representation for **Alice**.
+
+    We are also able to compare two objects correctly, with `person3 == person2` now yielding `True`, meaning the two data items are identical.
+
+5. Dataclasses also make it easier to **sort** or **order** data. This can be achieved by specifying `order=True` in the `@dataclass` decorator.

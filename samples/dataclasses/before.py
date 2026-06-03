@@ -9,7 +9,7 @@ class Person:
         self.age = age
 
 person1 = Person("Alice", "Engineer", "30")
-person2 = Person("Charlie", "Manager", "30")
+person2 = Person("Charlie", "Manager", "40")
 person3 = Person("Charlie", "Manager", "40")
 
 print(person1)  # <__main__.Person object at 0x...>
