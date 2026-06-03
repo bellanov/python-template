@@ -188,9 +188,85 @@ True
 
 ## Default Values
 
-Lorem ispsum dolor dolet.
+Dataclasses also let you define **default values**.
 
+To do so, initialize the attribute and set it to an initial value. 
+
+```python
+@dataclass(order=True)
+class Person:
+    sort_index: int = field(init=False, repr=False)
+    name: str
+    job: str
+    age: str
+    strength: int = 100
+```
+
+It can still also be passed as a parameter, with `Alice` being defined with a `strength` of 80 below.
+
+```python
+Person(name='Alice', job='Engineer', age=30, strength=80)
+2587289307728
+2587289317968
+True
+True
+```
+
+## Creating Read-Only Objects
+
+1. You can also `freeze` Dataclasses by specifying the `frozen=True` parameter.
+
+```python
+class Person:
+    sort_index: int = field(init=False, repr=False)
+    name: str
+    job: str
+    age: int
+    strength: int = 100
+
+    def __post_init__(self):
+        self.sort_index = (self.age, self.name, self.job)
+```
+
+2. Running the program results in an **error** because the `Class` cannot be updated after instantiation due to it being *frozen*. This shows that the class is indeed `ReadOnly`.
+
+```sh
+Traceback (most recent call last):
+  File "C:\Users\cityd\Documents\GitHub\python-samples\samples\dataclasses\after.py", line 16, in <module>
+    person1 = Person("Alice", "Engineer", 30, 80)
+  File "<string>", line 7, in __init__
+  File "C:\Users\cityd\Documents\GitHub\python-samples\samples\dataclasses\after.py", line 13, in __post_init__
+    self.sort_index = (self.age, self.name, self.job)
+    ^^^^^^^^^^^^^^^
+  File "<string>", line 35, in __setattr__
+dataclasses.FrozenInstanceError: cannot assign to field 'sort_index'
+```
+
+To get around this, we can avoid interacting with the `self` object by using the `__setattr__` method to achieve the same result without touching the `Class`.
+
+```python
+@dataclass(order=True, frozen=True)
+class Person:
+    sort_index: int = field(init=False, repr=False)
+    name: str
+    job: str
+    age: int
+    strength: int = 100
+
+    def __post_init__(self):
+        object.__setattr__(self, "sort_index", (self.age, self.name, self.job))
+```
+
+Upon execution, the program now runs successfully.
+
+```sh
+Person(name='Alice', job='Engineer', age=30, strength=80)
+2234643302992
+2234647581776
+True
+True
+```
 
 ## String Representation
 
-Lorem ispsum dolor dolet.
+Lorem ispsum dolor sit amet.
