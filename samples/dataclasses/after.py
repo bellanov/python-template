@@ -14,11 +14,8 @@ print(person1)  # Person(name='Alice', job='Engineer', age='30')
 print(id(person2))  # <memory_address>
 print(id(person3))  # <different_memory_address>
 
-# Hmm, these should be equal!!!
+# Hmm, these are now equal!!!
 print(person3 == person2)  # True
 
 # Need to specify what this means
-print(person3 > person2)
-print(person3 < person2)
-print(person3 >= person2)
-print(person3 <= person2)
+print(person3 > person2)  # False, because they are equal

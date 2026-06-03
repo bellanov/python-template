@@ -116,3 +116,11 @@ Dataclasses address the problems in the above scenarios.
     We are also able to compare two objects correctly, with `person3 == person2` now yielding `True`, meaning the two data items are identical.
 
 5. Dataclasses also make it easier to **sort** or **order** data. This can be achieved by specifying `order=True` in the `@dataclass` decorator.
+
+```python
+@dataclass(order=True)
+class Person:
+    name: str
+    job: str
+    age: str
+```
