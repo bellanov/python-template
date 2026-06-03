@@ -254,7 +254,7 @@ class Person:
     strength: int = 100
 
     def __post_init__(self):
-        object.__setattr__(self, "sort_index", (self.age, self.name, self.job))
+        object.__setattr__(self, "sort_index", (self.strength, self.age))
 ```
 
 Upon execution, the program now runs successfully.
