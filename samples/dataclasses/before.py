@@ -8,6 +8,7 @@ class Person:
         self.job = job
         self.age = age
 
+
 person1 = Person("Alice", "Engineer", "30")
 person2 = Person("Charlie", "Manager", "40")
 person3 = Person("Charlie", "Manager", "40")
@@ -18,3 +19,8 @@ print(id(person3))  # <different_memory_address>
 
 # Hmm, these should be equal!!!
 print(person3 == person2)  # False
+
+# Need to specify what this means
+print(
+    person1 < person2
+)  # TypeError: '<' not supported between instances of 'Person' and 'Person'

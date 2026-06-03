@@ -44,10 +44,15 @@ print(person3 == person2)  # False
 When executed, the following output is generated.
 
 ```sh
-<__main__.Person object at 0x000001F0ACC08980>
-2133202094672
-2133202094992
+<__main__.Person object at 0x000002447C878980>
+2493170305616
+2493170305936
 False
+Traceback (most recent call last):
+  File "C:\Users\cityd\Documents\GitHub\python-samples\samples\dataclasses\before.py", line 23, in <module>
+    print(person1 < person2)  # TypeError: '<' not supported between instances of 'Person' and 'Person'
+          ^^^^^^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'Person' and 'Person'
 ```
 
 Printing `person1` doesn't yield any useful information. You would also expect `person1` and `person2` to be equal since they have the exact same values.
@@ -69,6 +74,8 @@ This behavior is typical in regular classes. With Dataclasses, you would prefer 
     With data, you may sometimes want to do deeper comparisons, where you take into account multiple `Class` attributes. Also, if the data is the same, you would expect the objects to be the same.
 
 Dataclasses address the problems in the above scenarios.
+
+## Creating a Dataclass
 
 1. To convert this `Class` into a Dataclass, first you import the dataclass module.
 
@@ -115,7 +122,9 @@ Dataclasses address the problems in the above scenarios.
 
     We are also able to compare two objects correctly, with `person3 == person2` now yielding `True`, meaning the two data items are identical.
 
-5. Dataclasses also make it easier to **sort** or **order** data. This can be achieved by specifying `order=True` in the `@dataclass` decorator.
+# Sorting a Dataclass
+
+1. Dataclasses also make it easier to **sort** or **order** data. This can be achieved by specifying `order=True` in the `@dataclass` decorator.
 
 ```python
 @dataclass(order=True)
@@ -124,3 +133,64 @@ class Person:
     job: str
     age: str
 ```
+
+By default, Dataclasses are sorted in order of their class attribute definition. In this case it would be, `name -> job -> age`.
+
+2. In most cases, it is better to control this behavior yourself, so that your programs don't run into unexpected behavior.
+
+This can be achieved by specifying the `sort_index` attribute. Initialize the value with the attribute (i.e., `age`) that you would like to sort by within the `__post_init__` method, which executes right after an object is initialized.
+
+A tuple (i.e., `(self.age, self.name, self.job)`) can be specified to sort by multiple values.
+
+```python
+@dataclass(order=True)
+class Person:
+    sort_index: int = field(init=False)
+    name: str
+    job: str
+    age: str
+
+    def __post_init__(self):
+        self.sort_index = (self.age, self.name, self.job)
+
+person1 = Person("Alice", "Engineer", "30")
+person2 = Person("Charlie", "Manager", "40")
+person3 = Person("Charlie", "Manager", "40")
+```
+
+Upon execution, the updated output contains the sort_index as one of the class attributes.
+
+```sh
+Person(sort_index=('30', 'Alice', 'Engineer'), name='Alice', job='Engineer', age='30')
+1881390107216
+1881390117456
+True
+True
+```
+
+We only need this to sort, so it's a good idea to remove this from this output. This can be accomplished by modifying the **string representation** of the class.
+
+3. This can be accomplished by updating the attribute declaration with the `repr=False` parameter.
+
+```python
+sort_index: int = field(init=False, repr=False)
+```
+
+Upon execution, the sort_index no longer appears within the output.
+
+```python
+Person(name='Alice', job='Engineer', age='30')
+2192302459472
+2192302469712
+True
+True
+```
+
+## Default Values
+
+Lorem ispsum dolor dolet.
+
+
+## String Representation
+
+Lorem ispsum dolor dolet.

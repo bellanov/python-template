@@ -1,10 +1,16 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+
 
 @dataclass(order=True)
 class Person:
+    sort_index: int = field(init=False, repr=False)
     name: str
     job: str
     age: str
+
+    def __post_init__(self):
+        self.sort_index = (self.age, self.name, self.job)
+
 
 person1 = Person("Alice", "Engineer", "30")
 person2 = Person("Charlie", "Manager", "40")
@@ -18,4 +24,4 @@ print(id(person3))  # <different_memory_address>
 print(person3 == person2)  # True
 
 # Need to specify what this means
-print(person3 > person2)  # False, because they are equal
+print(person1 < person2)  # Now we can compare them
