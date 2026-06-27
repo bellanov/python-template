@@ -16,10 +16,9 @@ def demo_boolean_basics() -> tuple[bool, bool]:
 
 def demo_none_checking(x) -> tuple[bool, bool]:
     """Demonstrate correct way to check for None."""
-    # Both work, but 'is' is the Pythonic way
-    eq_check = x == None
+    # Use 'is' to check for None, not '=='
     is_check = x is None
-    return eq_check, is_check
+    return is_check, is_check
 
 
 def demo_falsy_values() -> dict:
@@ -86,8 +85,7 @@ def main() -> None:
     print("✓ Boolean basics work correctly")
 
     # Test None checking
-    eq, is_check = demo_none_checking(None)
-    assert eq is True
+    is_check, _ = demo_none_checking(None)
     assert is_check is True
     print("✓ None checking works correctly")
 

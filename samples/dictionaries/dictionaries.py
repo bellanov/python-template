@@ -100,7 +100,7 @@ def demo_dict_membership_check() -> tuple[bool, bool, bool]:
     
     check1 = "user" in tweet.keys()        # True, but not Pythonic
     check2 = "user" in tweet               # Pythonic way of checking for keys
-    check3 = "joelgrus" in tweet_values if (tweet_values := tweet.values()) else False  # checking values
+    check3 = "joelgrus" in tweet.values()  # checking values
     
     return check1, check2, check3
 
