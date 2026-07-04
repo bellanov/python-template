@@ -45,7 +45,7 @@ def safe_dict_access(d: dict, key: str) -> str:
 def safe_file_read(filename: str) -> str:
     """Safely read a file."""
     try:
-        with open(filename, 'r') as f:
+        with open(filename, "r") as f:
             return f.read()
     except FileNotFoundError:
         return f"file '{filename}' not found"
@@ -75,7 +75,7 @@ def finally_example(value: str) -> tuple[str, bool]:
         result_msg = "invalid number"
     finally:
         finally_executed = True
-    
+
     return f"Result: {result if 'result' in locals() else 'unknown'}", finally_executed
 
 

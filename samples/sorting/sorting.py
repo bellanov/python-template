@@ -38,7 +38,9 @@ def demo_sort_tuples_by_element() -> list:
     """Demonstrate sorting tuples by a specific element."""
     word_counts = [("the", 5), ("quick", 3), ("brown", 2), ("fox", 1)]
     # Sort by count (second element) from highest to lowest
-    sorted_wc = sorted(word_counts, key=lambda word_and_count: word_and_count[1], reverse=True)
+    sorted_wc = sorted(
+        word_counts, key=lambda word_and_count: word_and_count[1], reverse=True
+    )
     return sorted_wc
 
 
@@ -97,7 +99,9 @@ def main() -> None:
     # Test sort strings by length
     by_length = demo_sort_strings_by_length()
     assert by_length == ["date", "apple", "banana", "cherry"]
-    assert all(len(by_length[i]) <= len(by_length[i+1]) for i in range(len(by_length)-1))
+    assert all(
+        len(by_length[i]) <= len(by_length[i + 1]) for i in range(len(by_length) - 1)
+    )
     print("✓ Sort strings by length works correctly")
 
     # Test case-insensitive sort

@@ -8,7 +8,7 @@ Functions are a fundamental way to organize code and make it reusable.
 
 def double(x):
     """Multiply input by 2.
-    
+
     This function multiplies its input by 2.
     """
     return x * 2
@@ -31,8 +31,10 @@ def higher_order_function(operation, x: int, y: int) -> int:
 
 def make_adder(x: int):
     """Create a function that adds x to its argument."""
+
     def adder(y: int) -> int:
         return x + y
+
     return adder
 
 
@@ -65,18 +67,18 @@ def main() -> None:
     # Test default parameter
     import io
     import sys
-    
+
     # Capture print output
     old_stdout = sys.stdout
     sys.stdout = io.StringIO()
     my_print("hello")
     output1 = sys.stdout.getvalue()
-    
+
     # Capture default output
     sys.stdout = io.StringIO()
     my_print()
     output2 = sys.stdout.getvalue()
-    
+
     sys.stdout = old_stdout
     assert "hello" in output1
     assert "my default message" in output2

@@ -104,7 +104,7 @@ def main() -> None:
         re.search("a", "cat"),
         not re.search("c", "dog"),
         3 == len(re.split("[ab]", "carbs")),
-        "R-D-" == re.sub("[0-9]", "-", "R2D2")
+        "R-D-" == re.sub("[0-9]", "-", "R2D2"),
     ]
     assert all(re_examples), "all the regex examples should be True"
     print("✓ All comprehensive regex examples work correctly")

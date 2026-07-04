@@ -9,8 +9,8 @@ contexts, beyond just True and False.
 
 def demo_boolean_basics() -> tuple[bool, bool]:
     """Demonstrate basic boolean comparisons."""
-    one_is_less_than_two = 1 < 2        # equals True
-    true_equals_false = True == False   # equals False
+    one_is_less_than_two = 1 < 2  # equals True
+    true_equals_false = True == False  # equals False
     return one_is_less_than_two, true_equals_false
 
 
@@ -33,7 +33,7 @@ def demo_falsy_values() -> dict:
         "zero int": 0,
         "zero float": 0.0,
     }
-    
+
     # Check which are falsy
     truthiness = {name: bool(value) for name, value in falsy_values.items()}
     return truthiness
@@ -60,18 +60,18 @@ def demo_default_value_with_or(x) -> int:
 
 def demo_all_function() -> tuple[bool, bool, bool, bool]:
     """Demonstrate the all() function."""
-    check1 = all([True, 1, {3}])     # True, all are truthy
-    check2 = all([True, 1, {}])      # False, {} is falsy
-    check3 = all([])                 # True, no falsy elements in the list
-    check4 = all([True, True, True]) # True
+    check1 = all([True, 1, {3}])  # True, all are truthy
+    check2 = all([True, 1, {}])  # False, {} is falsy
+    check3 = all([])  # True, no falsy elements in the list
+    check4 = all([True, True, True])  # True
     return check1, check2, check3, check4
 
 
 def demo_any_function() -> tuple[bool, bool, bool, bool]:
     """Demonstrate the any() function."""
-    check1 = any([True, 1, {}])      # True, True is truthy
-    check2 = any([False, 0, {}])     # False, all are falsy
-    check3 = any([])                 # False, no truthy elements in the list
+    check1 = any([True, 1, {}])  # True, True is truthy
+    check2 = any([False, 0, {}])  # False, all are falsy
+    check3 = any([])  # False, no truthy elements in the list
     check4 = any([False, False, True])  # True
     return check1, check2, check3, check4
 

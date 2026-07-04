@@ -31,3 +31,6 @@ jobs:
     - name: Lint with flake8, black, isort
       run: |
         scripts/lint.sh
+    - name: Test with pytest
+      run: |
+        scripts/test.sh

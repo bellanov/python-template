@@ -12,51 +12,51 @@ def demo_list_creation() -> tuple[list[int], list, list]:
     integer_list = [1, 2, 3]
     heterogeneous_list = ["string", 0.1, True]
     list_of_lists = [integer_list, heterogeneous_list, []]
-    
+
     return integer_list, heterogeneous_list, list_of_lists
 
 
 def demo_list_basics() -> tuple[int, int]:
     """Demonstrate basic list operations."""
     integer_list = [1, 2, 3]
-    list_length = len(integer_list)     # equals 3
-    list_sum = sum(integer_list)        # equals 6
-    
+    list_length = len(integer_list)  # equals 3
+    list_sum = sum(integer_list)  # equals 6
+
     return list_length, list_sum
 
 
 def demo_list_indexing() -> tuple[int, int, int, int]:
     """Demonstrate indexing and negative indexing."""
     x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    
-    zero = x[0]         # equals 0, lists are 0-indexed
-    one = x[1]          # equals 1
-    nine = x[-1]        # equals 9, last element
-    eight = x[-2]       # equals 8, next-to-last element
-    
+
+    zero = x[0]  # equals 0, lists are 0-indexed
+    one = x[1]  # equals 1
+    nine = x[-1]  # equals 9, last element
+    eight = x[-2]  # equals 8, next-to-last element
+
     return zero, one, nine, eight
 
 
 def demo_list_slicing() -> tuple[list[int], list[int], list[int], list[int], list[int]]:
     """Demonstrate list slicing."""
     x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    
-    first_three = x[:3]                     # [0, 1, 2]
-    three_to_end = x[3:]                    # [3, 4, ..., 9]
-    one_to_four = x[1:5]                    # [1, 2, 3, 4]
-    last_three = x[-3:]                     # [7, 8, 9]
-    without_first_and_last = x[1:-1]        # [1, 2, ..., 8]
-    
+
+    first_three = x[:3]  # [0, 1, 2]
+    three_to_end = x[3:]  # [3, 4, ..., 9]
+    one_to_four = x[1:5]  # [1, 2, 3, 4]
+    last_three = x[-3:]  # [7, 8, 9]
+    without_first_and_last = x[1:-1]  # [1, 2, ..., 8]
+
     return first_three, three_to_end, one_to_four, last_three, without_first_and_last
 
 
 def demo_list_stride() -> tuple[list[int], list[int]]:
     """Demonstrate slicing with stride."""
     x = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    
-    every_third = x[::3]            # [0, 3, 6, 9]
-    five_to_three = x[5:2:-1]       # [5, 4, 3]
-    
+
+    every_third = x[::3]  # [0, 3, 6, 9]
+    five_to_three = x[5:2:-1]  # [5, 4, 3]
+
     return every_third, five_to_three
 
 
@@ -69,32 +69,32 @@ def demo_list_concatenation() -> tuple[list[int], list[int]]:
     """Demonstrate list concatenation."""
     x = [1, 2, 3]
     x_extended = x.copy()  # Make a copy to avoid modifying the original
-    x_extended.extend([4, 5, 6])   # x_extended is now [1, 2, 3, 4, 5, 6]
-    
-    y = x + [4, 5, 6]    # y is [1, 2, 3, 4, 5, 6]; x is unchanged
-    
+    x_extended.extend([4, 5, 6])  # x_extended is now [1, 2, 3, 4, 5, 6]
+
+    y = x + [4, 5, 6]  # y is [1, 2, 3, 4, 5, 6]; x is unchanged
+
     return x_extended, y
 
 
 def demo_list_append() -> tuple[int, int]:
     """Demonstrate appending to a list."""
     x = [1, 2, 3]
-    x.append(0)     # x is now [1, 2, 3, 0]
-    y = x[-1]       # equals 0
-    z = len(x)      # equals 4
-    
+    x.append(0)  # x is now [1, 2, 3, 0]
+    y = x[-1]  # equals 0
+    z = len(x)  # equals 4
+
     return y, z
 
 
 def demo_list_unpacking() -> tuple[int, int]:
     """Demonstrate list unpacking."""
-    x, y = [1, 2]     # now x is 1, y is 2
+    x, y = [1, 2]  # now x is 1, y is 2
     return x, y
 
 
 def demo_list_unpacking_underscore() -> int:
     """Demonstrate using underscore for unwanted values during unpacking."""
-    _, y = [1, 2]    # now y == 2, didn't care about the first element
+    _, y = [1, 2]  # now y == 2, didn't care about the first element
     return y
 
 

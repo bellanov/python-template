@@ -12,7 +12,7 @@ def demo_tuple_creation() -> tuple:
     my_list = [1, 2]
     my_tuple = (1, 2)
     other_tuple = 3, 4  # Parentheses are optional
-    
+
     return my_tuple, other_tuple
 
 
@@ -31,15 +31,15 @@ def demo_tuple_multiple_return(x: int, y: int) -> tuple:
 
 def demo_tuple_unpacking() -> tuple[int, int]:
     """Demonstrate unpacking tuples for multiple assignment."""
-    s, p = demo_tuple_multiple_return(5, 10)   # s is 15, p is 50
+    s, p = demo_tuple_multiple_return(5, 10)  # s is 15, p is 50
     return s, p
 
 
 def demo_tuple_variable_swap() -> tuple[int, int]:
     """Demonstrate swapping variables using tuple assignment."""
-    x, y = 1, 2     # now x is 1, y is 2
-    x, y = y, x     # Pythonic way to swap variables
-    return x, y     # now x is 2, y is 1
+    x, y = 1, 2  # now x is 1, y is 2
+    x, y = y, x  # Pythonic way to swap variables
+    return x, y  # now x is 2, y is 1
 
 
 def demo_tuple_immutable_operations(my_tuple: tuple) -> tuple:
@@ -49,7 +49,7 @@ def demo_tuple_immutable_operations(my_tuple: tuple) -> tuple:
     contains_1 = 1 in my_tuple
     combined = my_tuple + (3, 4)
     repeated = my_tuple * 2
-    
+
     return length, contains_1, combined, repeated
 
 

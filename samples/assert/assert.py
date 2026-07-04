@@ -9,7 +9,7 @@ working correctly.
 
 def smallest_item(xs: list) -> int:
     """Return the smallest item in a list.
-    
+
     This function demonstrates the use of assertions to validate inputs.
     """
     assert xs, "empty list has no smallest item"
@@ -23,7 +23,7 @@ def add(x: int, y: int) -> int:
 
 def divide(x: int, y: int) -> float:
     """Divide two numbers.
-    
+
     This function demonstrates assertions for output validation.
     """
     assert y != 0, "cannot divide by zero"

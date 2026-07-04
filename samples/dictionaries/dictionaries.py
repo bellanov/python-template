@@ -9,18 +9,18 @@ allowing for quick retrieval of values.
 
 def demo_dict_creation() -> tuple[dict, dict, dict]:
     """Demonstrate creating dictionaries."""
-    empty_dict = {}                     # Pythonic
-    empty_dict2 = dict()                # less Pythonic
-    grades = {"Joel": 80, "Tim": 95}    # dictionary literal
-    
+    empty_dict = {}  # Pythonic
+    empty_dict2 = dict()  # less Pythonic
+    grades = {"Joel": 80, "Tim": 95}  # dictionary literal
+
     return empty_dict, empty_dict2, grades
 
 
 def demo_dict_access() -> int:
     """Demonstrate accessing dictionary values."""
     grades = {"Joel": 80, "Tim": 95}
-    joels_grade = grades["Joel"]    # equals 80
-    
+    joels_grade = grades["Joel"]  # equals 80
+
     return joels_grade
 
 
@@ -35,29 +35,29 @@ def demo_dict_key_error(grades: dict) -> str:
 def demo_dict_membership() -> tuple[bool, bool]:
     """Demonstrate checking for key existence."""
     grades = {"Joel": 80, "Tim": 95}
-    joel_has_grade = "Joel" in grades   # True
-    kate_has_grade = "Kate" in grades   # False
-    
+    joel_has_grade = "Joel" in grades  # True
+    kate_has_grade = "Kate" in grades  # False
+
     return joel_has_grade, kate_has_grade
 
 
 def demo_dict_get() -> tuple[int, int, None]:
     """Demonstrate the get method with default values."""
     grades = {"Joel": 80, "Tim": 95}
-    joels_grade = grades.get("Joel", 0)     # equals 80
-    kates_grade = grades.get("Kate", 0)     # equals 0
-    no_ones_grade = grades.get("No One")    # default is None
-    
+    joels_grade = grades.get("Joel", 0)  # equals 80
+    kates_grade = grades.get("Kate", 0)  # equals 0
+    no_ones_grade = grades.get("No One")  # default is None
+
     return joels_grade, kates_grade, no_ones_grade
 
 
 def demo_dict_assignment() -> tuple[int, dict]:
     """Demonstrate assigning and modifying dictionary values."""
     grades = {"Joel": 80, "Tim": 95}
-    grades["Tim"] = 99          # replaces the old value
-    grades["Kate"] = 100        # adds a third entry
+    grades["Tim"] = 99  # replaces the old value
+    grades["Kate"] = 100  # adds a third entry
     num_students = len(grades)  # equals 3
-    
+
     return num_students, grades
 
 
@@ -67,9 +67,9 @@ def demo_dict_structured_data() -> dict:
         "user": "joelgrus",
         "text": "Data Science is Awesome",
         "retweet_count": 100,
-        "hashtags": ["#data", "#science", "#datascience", "#awesome", "#yolo"]
+        "hashtags": ["#data", "#science", "#datascience", "#awesome", "#yolo"],
     }
-    
+
     return tweet
 
 
@@ -79,13 +79,13 @@ def demo_dict_iteration() -> tuple[list, list, list]:
         "user": "joelgrus",
         "text": "Data Science is Awesome",
         "retweet_count": 100,
-        "hashtags": ["#data", "#science", "#datascience", "#awesome", "#yolo"]
+        "hashtags": ["#data", "#science", "#datascience", "#awesome", "#yolo"],
     }
-    
-    tweet_keys = list(tweet.keys())       # iterable for the keys
-    tweet_values = list(tweet.values())   # iterable for the values
-    tweet_items = list(tweet.items())     # iterable for the (key, value) tuples
-    
+
+    tweet_keys = list(tweet.keys())  # iterable for the keys
+    tweet_values = list(tweet.values())  # iterable for the values
+    tweet_items = list(tweet.items())  # iterable for the (key, value) tuples
+
     return tweet_keys, tweet_values, tweet_items
 
 
@@ -95,13 +95,13 @@ def demo_dict_membership_check() -> tuple[bool, bool, bool]:
         "user": "joelgrus",
         "text": "Data Science is Awesome",
         "retweet_count": 100,
-        "hashtags": ["#data", "#science", "#datascience", "#awesome", "#yolo"]
+        "hashtags": ["#data", "#science", "#datascience", "#awesome", "#yolo"],
     }
-    
-    check1 = "user" in tweet.keys()        # True, but not Pythonic
-    check2 = "user" in tweet               # Pythonic way of checking for keys
+
+    check1 = "user" in tweet.keys()  # True, but not Pythonic
+    check2 = "user" in tweet  # Pythonic way of checking for keys
     check3 = "joelgrus" in tweet.values()  # checking values
-    
+
     return check1, check2, check3
 
 
