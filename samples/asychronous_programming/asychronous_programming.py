@@ -15,7 +15,7 @@ def demo_concurrency_choice() -> dict:
     choices = {
         "CPU_Bound": "Multi Processing",
         "IO_Bound_Fast": "Multi Threading",
-        "IO_Bound_Slow": "Asyncio"
+        "IO_Bound_Slow": "Asyncio",
     }
     return choices
 
@@ -28,15 +28,14 @@ async def demo_async_function() -> str:
 
 async def demo_multiple_tasks() -> list:
     """Demonstrate running multiple async tasks."""
+
     async def task(name: str, duration: float) -> str:
         await asyncio.sleep(duration)
         return f"{name} completed"
-    
+
     # Create multiple tasks
     results = await asyncio.gather(
-        task("Task 1", 0.1),
-        task("Task 2", 0.1),
-        task("Task 3", 0.1)
+        task("Task 1", 0.1), task("Task 2", 0.1), task("Task 3", 0.1)
     )
     return results
 
@@ -44,6 +43,7 @@ async def demo_multiple_tasks() -> list:
 def sync_operation(name: str, duration: float) -> str:
     """Synchronous version for comparison."""
     import time
+
     time.sleep(duration)
     return f"{name} completed"
 
@@ -52,30 +52,31 @@ async def demo_async_vs_sync_concept() -> dict:
     """Demonstrate concept difference between sync and async."""
     concept = {
         "sync": "Blocks until operation completes, runs sequentially",
-        "async": "Suspends execution, allows other tasks to run, runs concurrently"
+        "async": "Suspends execution, allows other tasks to run, runs concurrently",
     }
     return concept
 
 
 async def demo_async_context_manager() -> str:
     """Demonstrate async context manager concept."""
+
     # Simulating an async resource
     class AsyncResource:
         async def __aenter__(self):
             await asyncio.sleep(0.01)
             return self
-        
+
         async def __aexit__(self, exc_type, exc_val, exc_tb):
             await asyncio.sleep(0.01)
             return False
-        
+
         async def do_work(self):
             await asyncio.sleep(0.01)
             return "Work completed"
-    
+
     async with AsyncResource() as resource:
         result = await resource.do_work()
-    
+
     return result
 
 

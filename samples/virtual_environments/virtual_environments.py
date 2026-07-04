@@ -6,8 +6,8 @@ Virtual environments are isolated Python environments that allow you to manage
 separate sets of dependencies for different projects.
 """
 
-import sys
 import os
+import sys
 
 
 def demo_venv_info() -> dict:
@@ -16,7 +16,7 @@ def demo_venv_info() -> dict:
         "python_version": f"{sys.version_info.major}.{sys.version_info.minor}",
         "python_executable": sys.executable,
         "prefix": sys.prefix,
-        "path": sys.path[:3]  # First few entries
+        "path": sys.path[:3],  # First few entries
     }
     return venv_info
 
@@ -24,8 +24,9 @@ def demo_venv_info() -> dict:
 def demo_check_venv_active() -> bool:
     """Check if code is running in a virtual environment."""
     # Check if 'venv' or 'virtualenv' directories exist
-    return (hasattr(sys, 'real_prefix') or 
-            (hasattr(sys, 'base_prefix') and sys.base_prefix != sys.prefix))
+    return hasattr(sys, "real_prefix") or (
+        hasattr(sys, "base_prefix") and sys.base_prefix != sys.prefix
+    )
 
 
 def demo_package_isolation() -> str:
@@ -33,8 +34,9 @@ def demo_package_isolation() -> str:
     # In a virtual environment, packages are isolated
     # Each venv has its own site-packages directory
     import site
+
     site_packages = site.getsitepackages()
-    
+
     if site_packages:
         return site_packages[0]
     else:
@@ -48,7 +50,7 @@ def demo_venv_benefits() -> list:
         "Avoid version conflicts between projects",
         "Reproducible environments",
         "Easy cleanup (just delete the directory)",
-        "Can have different Python versions"
+        "Can have different Python versions",
     ]
     return benefits
 
@@ -67,7 +69,7 @@ def main() -> None:
     venv_info = demo_venv_info()
     print(f"✓ Python version: {venv_info['python_version']}")
     print(f"✓ Python executable: {venv_info['python_executable']}")
-    
+
     # Check if in venv
     in_venv = demo_check_venv_active()
     print(f"✓ Running in virtual environment: {in_venv}")

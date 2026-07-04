@@ -9,22 +9,26 @@ Overview of *args & kwargs* and their usage.
 
 def doubler(f):
     """Create a higher-order function that doubles the output of a function.
-    
+
     This initial version only works with single-argument functions.
     """
+
     def g(x):
         return 2 * f(x)
+
     return g
 
 
 def doubler_correct(f):
     """Create a higher-order function that works with any function signature.
-    
+
     Uses *args and **kwargs to accept arbitrary arguments.
     """
+
     def g(*args, **kwargs):
         """whatever arguments g is supplied, pass them through to f"""
         return 2 * f(*args, **kwargs)
+
     return g
 
 

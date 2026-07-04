@@ -11,7 +11,7 @@ from typing import Generator
 
 def generate_range(n: int) -> Generator[int, None, None]:
     """Generate integers from 0 to n-1.
-    
+
     This is a generator function that yields values lazily.
     """
     i = 0
@@ -42,20 +42,20 @@ def demo_generator_pipeline() -> Generator:
     evens = (x for x in data if x % 2 == 0)
     even_squares = (x**2 for x in evens)
     even_squares_ending_in_six = (x for x in even_squares if x % 10 == 6)
-    
+
     return even_squares_ending_in_six
 
 
 def demo_generator_once_iteration() -> list:
     """Demonstrate that generators can only be iterated once."""
     gen = generate_range(3)
-    
+
     # First iteration
     first = list(gen)
-    
+
     # Second iteration on same generator returns empty
     second = list(gen)
-    
+
     return first, second
 
 
@@ -102,7 +102,7 @@ def main() -> None:
     gen = generate_range(1000000)
     # This creates a list (eager) - significant memory
     lst = list(range(1000000))
-    
+
     # Both work the same way, but generator is more efficient
     gen_first = next(generate_range(1000000))
     lst_first = lst[0]

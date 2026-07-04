@@ -10,15 +10,12 @@ for different use cases.
 def demo_dependency_structure() -> dict:
     """Demonstrate the structure of optional dependencies."""
     dependencies_structure = {
-        "core": [
-            "# Always installed",
-            "requests"
-        ],
+        "core": ["# Always installed", "requests"],
         "optional_groups": {
             "ml": ["numpy", "scikit-learn"],
             "aws": ["boto3"],
-            "dev": ["pytest", "black"]
-        }
+            "dev": ["pytest", "black"],
+        },
     }
     return dependencies_structure
 
@@ -47,7 +44,7 @@ def demo_pip_install_commands() -> dict:
         "ml_dependencies": "pip install .[ml]",
         "aws_dependencies": "pip install .[aws]",
         "dev_dependencies": "pip install .[dev]",
-        "multiple_groups": "pip install .[ml,aws,dev]"
+        "multiple_groups": "pip install .[ml,aws,dev]",
     }
     return commands
 
@@ -87,7 +84,7 @@ def demo_why_optional_dependencies() -> list:
         "Clear separation of concerns (core vs. extras)",
         "Easier dependency management",
         "Reduced conflicts in dependency trees",
-        "Different users get what they need"
+        "Different users get what they need",
     ]
     return reasons
 

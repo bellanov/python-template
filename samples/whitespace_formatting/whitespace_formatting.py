@@ -29,49 +29,64 @@ def demo_nested_loops() -> list:
 def demo_long_computation() -> int:
     """Demonstrate handling long computations with line breaks."""
     # Whitespace is ignored inside parentheses
-    long_winded_computation = (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12
-                              + 13 + 14 + 15 + 16 + 17 + 18 + 19 + 20)
+    long_winded_computation = (
+        1
+        + 2
+        + 3
+        + 4
+        + 5
+        + 6
+        + 7
+        + 8
+        + 9
+        + 10
+        + 11
+        + 12
+        + 13
+        + 14
+        + 15
+        + 16
+        + 17
+        + 18
+        + 19
+        + 20
+    )
     return long_winded_computation
 
 
 def demo_readable_list_of_lists() -> list:
     """Demonstrate readable formatting of nested lists."""
     # Properly formatted for readability
-    easier_to_read = [[1, 2, 3],
-                      [4, 5, 6],
-                      [7, 8, 9]]
+    easier_to_read = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
     return easier_to_read
 
 
 def demo_line_continuation() -> int:
     """Demonstrate line continuation with backslash."""
     # Using backslash for line continuation (rarely used)
-    result = 1 + 2 + \
-             3 + 4 + \
-             5
+    result = 1 + 2 + 3 + 4 + 5
     return result
 
 
 def demo_function_with_proper_format() -> str:
     """Demonstrate proper formatting of function calls."""
     # Multi-line function call
-    my_list = ['apple', 'banana', 'cherry']
-    result = ", ".join([f"Item: {item}"
-                        for item in my_list])
+    my_list = ["apple", "banana", "cherry"]
+    result = ", ".join([f"Item: {item}" for item in my_list])
     return result
 
 
 def demo_conditional_formatting() -> str:
     """Demonstrate conditional statement formatting."""
     age = 25
-    
+
     if age < 18:
         status = "minor"
     elif age < 65:
         status = "adult"
     else:
         status = "senior"
-    
+
     return status
 
 

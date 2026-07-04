@@ -110,7 +110,9 @@ class Rectangle:
 
     def __post_init__(self) -> None:
         if self.width <= 0 or self.height <= 0:
-            raise ValueError(f"Dimensions must be positive, got {self.width}x{self.height}")
+            raise ValueError(
+                f"Dimensions must be positive, got {self.width}x{self.height}"
+            )
         # Compute derived fields once, immediately after validation
         self.area = self.width * self.height
         self.perimeter = 2 * (self.width + self.height)
@@ -295,14 +297,18 @@ class LineItem:
     def __post_init__(self) -> None:
         if self.quantity < 1:
             raise ValueError("Quantity must be at least 1")
-        self.subtotal = Money(self.unit_price.amount * self.quantity, self.unit_price.currency)
+        self.subtotal = Money(
+            self.unit_price.amount * self.quantity, self.unit_price.currency
+        )
 
 
 @dataclass
 class Order:
     """An e-commerce order demonstrating combined dataclass patterns."""
 
-    order_id: str = field(default_factory=lambda: str(uuid.uuid4())[:8], compare=False)  # shortened for readability; use full UUID in production
+    order_id: str = field(
+        default_factory=lambda: str(uuid.uuid4())[:8], compare=False
+    )  # shortened for readability; use full UUID in production
     customer_name: str = ""
     items: list[LineItem] = field(default_factory=list)
     status: str = field(default="pending", compare=False)
@@ -388,8 +394,12 @@ def main() -> None:
     print("\n=== ClassVar & InitVar ===")
     prod_cfg = ServerConfig("prod.example.com")
     dev_cfg = ServerConfig("localhost", debug_mode=True)
-    print(f"  prod: host={prod_cfg.host}  port={prod_cfg.port}  log_level={prod_cfg.log_level}")
-    print(f"  dev:  host={dev_cfg.host}  port={dev_cfg.port}  log_level={dev_cfg.log_level}")
+    print(
+        f"  prod: host={prod_cfg.host}  port={prod_cfg.port}  log_level={prod_cfg.log_level}"
+    )
+    print(
+        f"  dev:  host={dev_cfg.host}  port={dev_cfg.port}  log_level={dev_cfg.log_level}"
+    )
     print(f"  Shared default port: {ServerConfig.DEFAULT_PORT}")
 
     # 7. Utility Functions

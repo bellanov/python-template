@@ -52,9 +52,9 @@ def demo_multiple_for_loops() -> list:
 
 def demo_nested_for_with_reference() -> list:
     """Demonstrate later for loops using earlier results."""
-    increasing_pairs = [(x, y)                      # only pairs with x < y
-                        for x in range(5)
-                        for y in range(x + 1, 5)]
+    increasing_pairs = [
+        (x, y) for x in range(5) for y in range(x + 1, 5)  # only pairs with x < y
+    ]
     return increasing_pairs
 
 

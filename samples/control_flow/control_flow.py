@@ -48,9 +48,9 @@ def demo_continue_break() -> list[int]:
     results = []
     for x in range(10):
         if x == 3:
-            continue    # go immediately to the next iteration
+            continue  # go immediately to the next iteration
         if x == 5:
-            break       # quit the loop entirely
+            break  # quit the loop entirely
         results.append(x)
     return results  # will contain 0, 1, 2, 4
 
@@ -80,7 +80,12 @@ def main() -> None:
 
     # Test continue and break
     continue_break_result = demo_continue_break()
-    assert continue_break_result == [0, 1, 2, 4], "continue/break should skip 3 and stop at 5"
+    assert continue_break_result == [
+        0,
+        1,
+        2,
+        4,
+    ], "continue/break should skip 3 and stop at 5"
     print("✓ Continue and break work correctly")
 
     print("\nAll control flow concepts demonstrated successfully!")

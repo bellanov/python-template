@@ -33,7 +33,7 @@ def demo_word_count_try_except(document: list[str]) -> dict:
 
 def demo_word_count_defaultdict(document: list[str]) -> dict:
     """Demonstrate word counting using defaultdict."""
-    word_counts = defaultdict(int)      # int() produces 0
+    word_counts = defaultdict(int)  # int() produces 0
     for word in document:
         word_counts[word] += 1
     return dict(word_counts)  # Convert back to regular dict for comparison
@@ -41,8 +41,8 @@ def demo_word_count_defaultdict(document: list[str]) -> dict:
 
 def demo_defaultdict_list() -> dict:
     """Demonstrate defaultdict with list as default factory."""
-    dd_list = defaultdict(list)             # list() produces an empty list
-    dd_list[2].append(1)                    # now dd_list contains {2: [1]}
+    dd_list = defaultdict(list)  # list() produces an empty list
+    dd_list[2].append(1)  # now dd_list contains {2: [1]}
     dd_list[2].append(3)
     dd_list[5].append(10)
     return dict(dd_list)
@@ -50,16 +50,16 @@ def demo_defaultdict_list() -> dict:
 
 def demo_defaultdict_dict() -> dict:
     """Demonstrate defaultdict with dict as default factory."""
-    dd_dict = defaultdict(dict)             # dict() produces an empty dict
-    dd_dict["Joel"]["City"] = "Seattle"     # {"Joel" : {"City": "Seattle"}}
+    dd_dict = defaultdict(dict)  # dict() produces an empty dict
+    dd_dict["Joel"]["City"] = "Seattle"  # {"Joel" : {"City": "Seattle"}}
     dd_dict["Alice"]["City"] = "Portland"
     return dict(dd_dict)
 
 
 def demo_defaultdict_custom() -> dict:
     """Demonstrate defaultdict with custom default factory."""
-    dd_pair = defaultdict(lambda: [0, 0])   # Define custom types
-    dd_pair[2][1] = 1                       # now dd_pair contains {2: [0, 1]}
+    dd_pair = defaultdict(lambda: [0, 0])  # Define custom types
+    dd_pair[2][1] = 1  # now dd_pair contains {2: [0, 1]}
     dd_pair[5][0] = 10
     return dict(dd_pair)
 
@@ -67,7 +67,7 @@ def demo_defaultdict_custom() -> dict:
 def main() -> None:
     """Demonstrate defaultdict concepts."""
     document = ["the", "quick", "brown", "fox", "jumps", "the", "lazy", "dog", "the"]
-    
+
     # Test manual approach
     word_counts_manual = demo_word_count_manual(document)
     assert word_counts_manual["the"] == 3

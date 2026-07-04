@@ -6,12 +6,12 @@ Type annotations provide documentation and enable type checking tools to catch
 potential errors before runtime.
 """
 
-from typing import List, Dict, Optional, Union, Callable
+from typing import Callable, Dict, List, Optional, Union
 
 
 def add_untyped(a, b):
     """Add two values without type annotations.
-    
+
     This works for numbers, lists, strings, etc.
     """
     return a + b
@@ -19,7 +19,7 @@ def add_untyped(a, b):
 
 def add_typed(a: int, b: int) -> int:
     """Add two integers with type annotations.
-    
+
     Type annotations document the expected types but don't enforce them at runtime.
     """
     return a + b
@@ -37,7 +37,7 @@ def create_mapping(keys: List[str], values: List[int]) -> Dict[str, int]:
 
 def find_first_positive(numbers: List[int]) -> Optional[int]:
     """Find the first positive number, or None if not found.
-    
+
     Optional indicates the return value can be either int or None.
     """
     for num in numbers:
@@ -53,7 +53,7 @@ def flexible_add(a: Union[int, float], b: Union[int, float]) -> Union[int, float
 
 def apply_operation(operation: Callable[[int, int], int], x: int, y: int) -> int:
     """Apply a binary operation to two integers.
-    
+
     Callable indicates a function type.
     """
     return operation(x, y)

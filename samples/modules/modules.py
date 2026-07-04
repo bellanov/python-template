@@ -8,7 +8,7 @@ third-party packages.
 
 import re
 import re as regex
-from collections import defaultdict, Counter
+from collections import Counter, defaultdict
 from typing import Pattern
 
 
@@ -36,50 +36,50 @@ def demo_from_import() -> tuple:
 
 def demo_standard_library() -> str:
     """Demonstrate using standard library modules."""
-    import sys
-    import os
     import json
-    
+    import os
+    import sys
+
     # Get Python version
     python_version = sys.version_info.major
-    
+
     # Get current directory
     current_dir = os.getcwd()
-    
+
     # Parse JSON
     data = json.loads('{"name": "Python", "version": 3}')
-    
+
     return f"Python {python_version}: {data['name']}"
 
 
 def demo_collections_module() -> tuple:
     """Demonstrate collections module utilities."""
     from collections import Counter, defaultdict, deque
-    
+
     # Counter example
     word_counts = Counter("hello world hello")
-    
+
     # defaultdict example
     groups = defaultdict(list)
-    groups['even'].append(2)
-    groups['odd'].append(1)
-    
+    groups["even"].append(2)
+    groups["odd"].append(1)
+
     # deque example
     queue = deque([1, 2, 3])
     queue.append(4)
     queue.popleft()
-    
+
     return word_counts, groups, list(queue)
 
 
 def demo_math_module() -> tuple:
     """Demonstrate math module."""
     import math
-    
+
     sqrt_4 = math.sqrt(4)
     pi_value = math.pi
     ceil_3_2 = math.ceil(3.2)
-    
+
     return sqrt_4, pi_value, ceil_3_2
 
 
@@ -109,8 +109,8 @@ def main() -> None:
 
     # Test collections module
     word_counts, groups, queue = demo_collections_module()
-    assert word_counts['l'] == 5  # 'l' appears 5 times in "hello world hello"
-    assert groups['even'] == [2]
+    assert word_counts["l"] == 5  # 'l' appears 5 times in "hello world hello"
+    assert groups["even"] == [2]
     assert queue == [2, 3, 4]
     print("✓ Collections module works correctly")
 

@@ -9,7 +9,7 @@ created with single or double quotes, and support various operations.
 
 def demo_string_delimiters() -> tuple[str, str]:
     """Demonstrate single and double quoted strings."""
-    single_quoted_string = 'data science'
+    single_quoted_string = "data science"
     double_quoted_string = "data science"
     return single_quoted_string, double_quoted_string
 
@@ -17,13 +17,13 @@ def demo_string_delimiters() -> tuple[str, str]:
 def demo_escape_characters() -> tuple[int, int]:
     """Demonstrate escape characters and raw strings."""
     # Tab character (escape sequence)
-    tab_string = "\t"   # represents the tab character
+    tab_string = "\t"  # represents the tab character
     tab_length = len(tab_string)
-    
+
     # Raw string (backslashes are literal)
-    not_tab_string = r"\t"      # represents the characters '\' and 't'
+    not_tab_string = r"\t"  # represents the characters '\' and 't'
     not_tab_length = len(not_tab_string)
-    
+
     return tab_length, not_tab_length
 
 
@@ -39,13 +39,13 @@ def demo_string_concatenation(first_name: str, last_name: str) -> tuple[str, str
     """Demonstrate multiple ways to construct strings."""
     # String addition (old way)
     full_name1 = first_name + " " + last_name
-    
+
     # String.format method
     full_name2 = "{0} {1}".format(first_name, last_name)
-    
+
     # F-string (preferred in Python 3.6+)
     full_name3 = f"{first_name} {last_name}"
-    
+
     return full_name1, full_name2, full_name3
 
 

@@ -7,7 +7,7 @@ installation instructions and core concepts.
 
 def demo_zen_of_python() -> str:
     """Demonstrate the Zen of Python principles.
-    
+
     Key principles include:
     - There should be one—and preferably only one—obvious way to do it.
     - Beautiful is better than ugly.
@@ -19,22 +19,22 @@ def demo_zen_of_python() -> str:
 
 def is_pythonic_example() -> bool:
     """Show Pythonic vs non-Pythonic ways.
-    
+
     Pythonic way:
         for item in items:
             print(item)
-    
+
     Non-Pythonic way:
         for i in range(len(items)):
             print(items[i])
     """
     items = [1, 2, 3]
     results = []
-    
+
     # Pythonic way
     for item in items:
         results.append(item)
-    
+
     return results == items
 
 
@@ -44,7 +44,7 @@ def beautiful_is_better() -> str:
     total_count = 0
     for i in range(5):
         total_count += i
-    
+
     return f"Beautiful code is easier to understand and maintain"
 
 
@@ -52,13 +52,13 @@ def explicit_is_better_than_implicit() -> dict:
     """Demonstrate explicit over implicit principle."""
     # Explicit: clear what's happening
     data = {"name": "Alice", "age": 30}
-    
+
     # This is explicit - we know what we're getting
     name = data.get("name", "Unknown")
-    
+
     # This is less explicit - might raise KeyError
     # age = data["age"]  # Could fail if key doesn't exist
-    
+
     return data
 
 
@@ -67,10 +67,10 @@ def simple_is_better_than_complex() -> int:
     # Simple way
     numbers = [1, 2, 3, 4, 5]
     total = sum(numbers)
-    
+
     # Complex way (avoid this)
     # total = reduce(lambda x, y: x + y, numbers)
-    
+
     return total
 
 
@@ -80,13 +80,17 @@ def demo_python_basics() -> tuple:
     x = 10
     x = "hello"
     x = [1, 2, 3]
-    
+
     # Type checking
     var_int = 42
     var_str = "Python"
     var_list = [1, 2, 3]
-    
-    return isinstance(var_int, int), isinstance(var_str, str), isinstance(var_list, list)
+
+    return (
+        isinstance(var_int, int),
+        isinstance(var_str, str),
+        isinstance(var_list, list),
+    )
 
 
 def main() -> None:
