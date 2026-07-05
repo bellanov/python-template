@@ -7,7 +7,6 @@ and CPU-bound operations.
 """
 
 import asyncio
-from typing import Coroutine
 
 
 def demo_concurrency_choice() -> dict:

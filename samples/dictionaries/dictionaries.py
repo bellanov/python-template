@@ -28,6 +28,7 @@ def demo_dict_key_error(grades: dict) -> str:
     """Demonstrate KeyError handling."""
     try:
         kates_grade = grades["Kate"]
+        return f"Kate's grade is {kates_grade}"
     except KeyError:
         return "no grade for Kate!"
 

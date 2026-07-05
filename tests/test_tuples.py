@@ -5,10 +5,10 @@ import pytest
 from samples.tuples.tuples import (
     demo_tuple_creation,
     demo_tuple_immutability,
+    demo_tuple_immutable_operations,
     demo_tuple_multiple_return,
     demo_tuple_unpacking,
     demo_tuple_variable_swap,
-    demo_tuple_immutable_operations,
 )
 
 

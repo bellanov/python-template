@@ -70,5 +70,5 @@ def test_word_count_consistency():
     manual = demo_word_count_manual(document)
     try_except = demo_word_count_try_except(document)
     defaultdict = demo_word_count_defaultdict(document)
-    
+
     assert manual == try_except == defaultdict

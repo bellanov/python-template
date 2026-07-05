@@ -32,7 +32,7 @@ T = TypeVar("T")
 def read_chunks(text: str, size: int = 4) -> Iterator[str]:
     """Yield successive chunks of a string without loading all chunks at once."""
     for start in range(0, len(text), size):
-        yield text[start : start + size]
+        yield text[start: start + size]
 
 
 # ─────────────────────────────────────────────

@@ -4,11 +4,11 @@ import pytest
 
 from samples.truthiness.truthiness import (
     demo_boolean_basics,
-    demo_none_checking,
-    demo_falsy_values,
-    demo_truthy_values,
-    demo_short_circuit_with_and,
     demo_default_value_with_or,
+    demo_falsy_values,
+    demo_none_checking,
+    demo_short_circuit_with_and,
+    demo_truthy_values,
 )
 
 

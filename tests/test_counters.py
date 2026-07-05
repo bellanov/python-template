@@ -1,7 +1,8 @@
 """Unit tests for counters sample."""
 
-import pytest
 from collections import Counter
+
+import pytest
 
 from samples.counters.counters import (
     demo_counter_access,
