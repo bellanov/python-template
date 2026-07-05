@@ -1,21 +1,22 @@
 """Unit tests for generators sample."""
 
-import pytest
 import itertools
 
+import pytest
+
 from samples.generators.generators import (
-    read_chunks,
-    parse_lines,
-    to_uppercase,
-    filter_short,
     build_pipeline,
-    fibonacci,
-    counter,
-    running_average,
-    flatten,
     chain_sources,
-    sum_of_squares,
+    counter,
+    fibonacci,
+    filter_short,
     first_match,
+    flatten,
+    parse_lines,
+    read_chunks,
+    running_average,
+    sum_of_squares,
+    to_uppercase,
 )
 
 
@@ -97,7 +98,7 @@ def test_running_average():
     avg1 = gen.send(10)
     avg2 = gen.send(20)
     avg3 = gen.send(30)
-    
+
     assert avg1 == 10.0
     assert avg2 == 15.0
     assert abs(avg3 - 20.0) < 0.01  # 20.0 with floating point tolerance

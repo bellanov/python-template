@@ -1,18 +1,17 @@
 """Unit tests for type_annotations sample."""
 
 import pytest
-from typing import List, Dict, Optional, Union, Callable
 
 from samples.type_annotations.type_annotations import (
-    add_untyped,
     add_typed,
-    process_list,
+    add_untyped,
+    apply_operation,
     create_mapping,
+    demo_dict_type_annotation,
+    demo_list_type_annotation,
     find_first_positive,
     flexible_add,
-    apply_operation,
-    demo_list_type_annotation,
-    demo_dict_type_annotation,
+    process_list,
 )
 
 

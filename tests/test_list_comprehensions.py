@@ -4,13 +4,13 @@ import pytest
 
 from samples.list_comprehensions.list_comprehensions import (
     demo_basic_comprehension,
-    demo_transformation,
     demo_combined_filter_transform,
     demo_dict_comprehension,
-    demo_set_comprehension,
-    demo_underscore_for_unused,
     demo_multiple_for_loops,
     demo_nested_for_with_reference,
+    demo_set_comprehension,
+    demo_transformation,
+    demo_underscore_for_unused,
 )
 
 

@@ -3,15 +3,15 @@
 import pytest
 
 from samples.dictionaries.dictionaries import (
-    demo_dict_creation,
     demo_dict_access,
+    demo_dict_assignment,
+    demo_dict_creation,
+    demo_dict_get,
+    demo_dict_iteration,
     demo_dict_key_error,
     demo_dict_membership,
-    demo_dict_get,
-    demo_dict_assignment,
-    demo_dict_structured_data,
-    demo_dict_iteration,
     demo_dict_membership_check,
+    demo_dict_structured_data,
 )
 
 

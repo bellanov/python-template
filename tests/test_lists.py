@@ -3,14 +3,14 @@
 import pytest
 
 from samples.lists.lists import (
-    demo_list_creation,
+    demo_list_append,
     demo_list_basics,
+    demo_list_concatenation,
+    demo_list_creation,
     demo_list_indexing,
+    demo_list_membership,
     demo_list_slicing,
     demo_list_stride,
-    demo_list_membership,
-    demo_list_concatenation,
-    demo_list_append,
     demo_list_unpacking,
     demo_list_unpacking_underscore,
 )

@@ -3,10 +3,10 @@
 import pytest
 
 from samples.strings.strings import (
-    demo_string_delimiters,
     demo_escape_characters,
     demo_multiline_strings,
     demo_string_concatenation,
+    demo_string_delimiters,
 )
 
 

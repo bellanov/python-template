@@ -3,11 +3,11 @@
 import pytest
 
 from samples.control_flow.control_flow import (
+    demo_continue_break,
+    demo_for_loop,
     demo_if_statements,
     demo_ternary,
     demo_while_loop,
-    demo_for_loop,
-    demo_continue_break,
 )
 
 

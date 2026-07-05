@@ -3,14 +3,14 @@
 import pytest
 
 from samples.sorting.sorting import (
-    demo_sort_in_place,
-    demo_sorted_function,
     demo_reverse_sort,
     demo_sort_by_key,
-    demo_sort_tuples_by_element,
+    demo_sort_case_insensitive,
+    demo_sort_in_place,
     demo_sort_strings,
     demo_sort_strings_by_length,
-    demo_sort_case_insensitive,
+    demo_sort_tuples_by_element,
+    demo_sorted_function,
 )
 
 

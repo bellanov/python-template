@@ -3,10 +3,10 @@
 import pytest
 
 from samples.dsa.registry_pattern.registry import (
-    PluginRegistry,
     CsvExporter,
-    JsonExporter,
     ExcelExporter,
+    JsonExporter,
+    PluginRegistry,
 )
 
 

@@ -6,7 +6,6 @@ Virtual environments are isolated Python environments that allow you to manage
 separate sets of dependencies for different projects.
 """
 
-import os
 import sys
 
 

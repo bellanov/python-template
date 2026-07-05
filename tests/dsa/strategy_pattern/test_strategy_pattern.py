@@ -4,16 +4,16 @@ import pytest
 
 from samples.dsa.strategy_pattern.strategy import (
     BubbleSort,
+    FileExporter,
+    FlatDiscount,
     MergeSort,
-    Sorter,
     NoDiscount,
     PercentageDiscount,
-    FlatDiscount,
     PriceCalculator,
-    FileExporter,
+    Sorter,
     gzip_compress,
-    zlib_compress,
     no_compress,
+    zlib_compress,
 )
 
 
@@ -57,10 +57,10 @@ def test_sorter_strategy_swap():
     data = [5, 3, 8, 1, 9, 2]
     sorter = Sorter(BubbleSort())
     result1 = sorter.sort(data)
-    
+
     sorter.set_strategy(MergeSort())
     result2 = sorter.sort(data)
-    
+
     assert result1 == result2 == [1, 2, 3, 5, 8, 9]
 
 
@@ -104,7 +104,7 @@ def test_price_calculator_strategy_swap():
     """Test swapping discount strategies."""
     calc = PriceCalculator(NoDiscount())
     assert calc.calculate(100) == 100
-    
+
     calc.set_strategy(PercentageDiscount(20))
     assert calc.calculate(100) == 80.0
 
@@ -139,8 +139,8 @@ def test_file_exporter_strategy_swap():
     data = b"hello world" * 100
     exporter = FileExporter(no_compress)
     result1 = exporter.export(data)
-    
+
     exporter.set_strategy(gzip_compress)
     result2 = exporter.export(data)
-    
+
     assert len(result2) < len(result1)

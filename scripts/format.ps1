@@ -2,10 +2,10 @@
 #
 # Format Code Base.
 
-# Format Imports
 echo "Formatting imports..."
 isort samples
+isort tests
 
-# Format Code
 echo "Formatting code base..."
-black samples 
+black samples
+black tests

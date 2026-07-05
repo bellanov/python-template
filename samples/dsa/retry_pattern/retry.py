@@ -5,8 +5,6 @@ certain number of times before giving up. This can be useful for handling transi
 network issues or temporary unavailability of a service.
 """
 
-import random
-
 import httpx
 from tenacity import retry, stop_after_attempt, wait_exponential
 
