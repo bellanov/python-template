@@ -11,7 +11,7 @@ authors = [
 ]
 description = "Template for general Python development."
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.14"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
@@ -20,6 +20,7 @@ classifiers = [
 dependencies = [
     "httpx",
     "tenacity",
+    "pydantic"
 ]
 
 [project.optional-dependencies]
@@ -30,7 +31,7 @@ dev = [
     "ipython",
     "isort",
     "mypy",
-    "pytest",
+    "pytest"
 ]
 
 [tool.hatch.build.targets.wheel]
@@ -48,3 +49,6 @@ omit = [
 
 [tool.isort]
 profile = "black"
+
+[tool.black]
+target-version = ['py312', 'py313', 'py314']
