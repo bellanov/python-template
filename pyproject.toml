@@ -49,3 +49,4 @@ omit = [
 
 [tool.isort]
 profile = "black"
+target-version = ['py312', 'py313', 'py314']
