@@ -39,11 +39,3 @@ def fetch_joke() -> str:
         response.raise_for_status()
         data: dict[str, str] = response.json()
         return data["value"]
-
-
-def main() -> None:
-    print(fetch_joke())
-
-
-if __name__ == "__main__":
-    main()
