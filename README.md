@@ -11,37 +11,21 @@ A series of Python *samples* are available spanning the categories below.
 
 ## Script Execution
 
-First, a local project environment needs to be created, then the project's modules will be installed into locally into a virtual environment.
+First, a local project environment needs to be created, then the project's dependencies need to be be installed.
 
 1. Clone the repository.
 
    ```sh
-   git clone https://github.com/bellanov/python-template.git
-   cd python-template
+   git clone https://github.com/bellanov/web-scraping.git
+   cd web-scraping
    ```
 
-2. Create a virtual environment.
+2. Install Dependencies.
 
    ```sh
-   # Create Virtual Environment
-   python3 -m venv .venv
-
-   # Activate Virtual Environment
-   
-   # Linux
-   source .venv/bin/activate
-
-   # Windows
-   .venv\Scripts\activate
-   .venv\Scripts\Activate.ps1
-
-   # Install all dependencies (runtime and development)
-   pip install -e ".[dev]"
-
-   # Deactivate Virtual Environment
-   deactivate
+   # Install Dependencies
+   scripts/install.sh
    ```
-
 ## Testing, Linting, and Formatting
 
 Execute the tests to validate your installation.
@@ -50,10 +34,14 @@ Execute the tests to validate your installation.
 
 ```sh
 scripts/test.sh
+scripts/lint.sh
+scripts/format.sh
 ```
 
 ### Windows
 
 ```sh
 .\scripts\test.ps1
+.\scripts\lint.ps1
+.\scripts\format.ps1
 ```
