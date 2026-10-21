@@ -144,3 +144,40 @@ def test_file_exporter_strategy_swap():
     result2 = exporter.export(data)
 
     assert len(result2) < len(result1)
+
+
+@pytest.mark.unit
+def test_strategy_pattern():
+    """Test the overall strategy pattern implementation."""
+    data = [5, 3, 8, 1, 9, 2]
+
+    # Approach 1 — ABC
+    sorter = Sorter(BubbleSort())
+    print("BubbleSort:", sorter.sort(data))
+
+    sorter.set_strategy(MergeSort())  # swap at runtime
+    print("MergeSort: ", sorter.sort(data))
+
+    # Approach 2 — Protocol
+    calc = PriceCalculator(NoDiscount())
+    print(f"\nOriginal price:       ${calc.calculate(100):.2f}")
+
+    calc.set_strategy(PercentageDiscount(20))
+    print(f"After 20% discount:   ${calc.calculate(100):.2f}")
+
+    calc.set_strategy(FlatDiscount(15))
+    print(f"After $15 flat off:   ${calc.calculate(100):.2f}")
+
+    # Approach 3 — Callable
+    payload = b"hello world " * 100
+    exporter = FileExporter(no_compress)
+    raw = exporter.export(payload)
+    print(f"\nNo compression:   {len(raw)} bytes")
+
+    exporter.set_strategy(gzip_compress)
+    gz = exporter.export(payload)
+    print(f"gzip compression: {len(gz)} bytes")
+
+    exporter.set_strategy(zlib_compress)
+    zl = exporter.export(payload)
+    print(f"zlib compression: {len(zl)} bytes")
