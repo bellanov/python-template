@@ -16,8 +16,8 @@ First, a local project environment needs to be created, then the project's depen
 1. Clone the repository.
 
    ```sh
-   git clone https://github.com/bellanov/web-scraping.git
-   cd web-scraping
+   git clone https://github.com/bellanov/python-template.git
+   cd python-template
    ```
 
 2. Install Dependencies.
