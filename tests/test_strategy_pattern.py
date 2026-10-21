@@ -2,7 +2,7 @@
 
 import pytest
 
-from samples.dsa.strategy_pattern.strategy import (
+from samples.strategy_pattern.strategy import (
     BubbleSort,
     FileExporter,
     FlatDiscount,

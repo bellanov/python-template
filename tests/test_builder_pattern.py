@@ -2,7 +2,7 @@
 
 import pytest
 
-from samples.dsa.builder_pattern.query_builder import Query, QueryBuilder
+from samples.builder_pattern.query_builder import Query, QueryBuilder
 
 
 @pytest.mark.unit

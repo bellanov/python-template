@@ -7,42 +7,6 @@ resolution-markers = [
 ]
 
 [[package]]
-name = "andy-python-template"
-version = "0.2.0"
-source = { editable = "." }
-dependencies = [
-    { name = "httpx" },
-    { name = "pydantic" },
-    { name = "tenacity" },
-]
-
-[package.optional-dependencies]
-dev = [
-    { name = "black" },
-    { name = "coverage" },
-    { name = "flake8" },
-    { name = "ipython" },
-    { name = "isort" },
-    { name = "mypy" },
-    { name = "pytest" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "black", marker = "extra == 'dev'" },
-    { name = "coverage", marker = "extra == 'dev'" },
-    { name = "flake8", marker = "extra == 'dev'" },
-    { name = "httpx" },
-    { name = "ipython", marker = "extra == 'dev'" },
-    { name = "isort", marker = "extra == 'dev'" },
-    { name = "mypy", marker = "extra == 'dev'" },
-    { name = "pydantic" },
-    { name = "pytest", marker = "extra == 'dev'" },
-    { name = "tenacity" },
-]
-provides-extras = ["dev"]
-
-[[package]]
 name = "annotated-types"
 version = "0.8.0"
 source = { registry = "https://pypi.org/simple" }
@@ -135,6 +99,42 @@ sdist = { url = "https://files.pythonhosted.org/packages/25/1e/faf0f247f6f881b98
 wheels = [
     { url = "https://files.pythonhosted.org/packages/d4/2b/04b8a15f3a1c77bc79ddf5c73875327f34b4fa75982df2b76e45e402d364/asttokens-3.0.2-py3-none-any.whl", hash = "sha256:9da13157f5b28becde0bd374fc677dcd3c290614264eff096f167c469cd9f933", size = 28702, upload-time = "2026-07-12T03:31:47.542Z" },
 ]
+
+[[package]]
+name = "bellanov-python-template"
+version = "0.2.0"
+source = { editable = "." }
+dependencies = [
+    { name = "httpx" },
+    { name = "pydantic" },
+    { name = "tenacity" },
+]
+
+[package.optional-dependencies]
+dev = [
+    { name = "black" },
+    { name = "coverage" },
+    { name = "flake8" },
+    { name = "ipython" },
+    { name = "isort" },
+    { name = "mypy" },
+    { name = "pytest" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "black", marker = "extra == 'dev'" },
+    { name = "coverage", marker = "extra == 'dev'" },
+    { name = "flake8", marker = "extra == 'dev'" },
+    { name = "httpx" },
+    { name = "ipython", marker = "extra == 'dev'" },
+    { name = "isort", marker = "extra == 'dev'" },
+    { name = "mypy", marker = "extra == 'dev'" },
+    { name = "pydantic" },
+    { name = "pytest", marker = "extra == 'dev'" },
+    { name = "tenacity" },
+]
+provides-extras = ["dev"]
 
 [[package]]
 name = "black"
