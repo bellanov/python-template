@@ -12,6 +12,7 @@ Three progressively Pythonic approaches are shown:
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
+from collections.abc import Callable
 from typing import Protocol
 
 # ─────────────────────────────────────────────
@@ -128,8 +129,6 @@ class PriceCalculator:
 # Best for simple, stateless strategies. A plain function or lambda
 # is the strategy — no class boilerplate needed.
 # ─────────────────────────────────────────────
-
-from collections.abc import Callable
 
 CompressionFn = Callable[[bytes], bytes]
 
