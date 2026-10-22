@@ -1,70 +1,27 @@
 """Unit tests for the Pydantic sample."""
 
 import pytest
-from pydantic import ValidationError
+from pydantic import Field
 
-from samples.pydantic.pydantic import User
+from samples.pydantic.camel_case import CamelCaseModel
 
 
-@pytest.mark.unit
-def test_user_validates_nested_data_and_uses_empty_tags_by_default():
-    user = User.model_validate(
-        {
-            "id": 1,
-            "name": "Ada Lovelace",
-            "address": {
-                "street": "12 Analytical Engine Way",
-                "city": "London",
-                "postal_code": "N1 1AA",
-            },
-        }
-    )
+class Folder(CamelCaseModel):
+    """Represents a folder.
 
-    assert user.address.city == "London"
-    assert user.tags == []
+    Attributes:
+        id: The ID of the folder.
+        name: The name of the folder.
+    """
+
+    name: str = Field()
+    parent: str = Field()
+    display_name: str = Field()
 
 
 @pytest.mark.unit
-@pytest.mark.parametrize(
-    "payload",
-    [
-        {
-            "id": 0,
-            "name": "Ada",
-            "address": {
-                "street": "1 Main Street",
-                "city": "London",
-                "postal_code": "N1 1AA",
-            },
-        },
-        {
-            "id": 1,
-            "name": "Ada",
-            "address": {
-                "street": "1 Main Street",
-                "city": "London",
-                "postal_code": "N1 1AA",
-                "country": "UK",
-            },
-        },
-    ],
-)
-def test_user_rejects_invalid_values_and_unexpected_fields(payload):
-    with pytest.raises(ValidationError):
-        User.model_validate(payload)
-
-
-@pytest.mark.unit
-def test_user_serializes_to_json():
-    user = User(
-        id=1,
-        name="Ada Lovelace",
-        address={
-            "street": "12 Analytical Engine Way",
-            "city": "London",
-            "postal_code": "N1 1AA",
-        },
-        tags=["researcher"],
-    )
-
-    assert '"name":"Ada Lovelace"' in user.model_dump_json()
+def test_camel_case_model():
+    folder = Folder(name="folders/123", parent="folders/456", display_name="My Folder")
+    assert folder.name == "folders/123"
+    assert folder.parent == "folders/456"
+    assert folder.display_name == "My Folder"
